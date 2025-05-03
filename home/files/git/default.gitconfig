@@ -1,0 +1,15 @@
+[safe]
+  directory=/etc/nixos
+[user]
+  email=taylr.fnt@gmail.com
+  name=taylrfnt
+  signingkey=/home/taylor/keys/github
+[commit]
+  gpgsign=true
+[gpg]
+  format=ssh
+[core]
+  repositoryformatversion=0
+  filemode=true
+  bare=false
+  logallrefupdates=true
