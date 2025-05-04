@@ -1,4 +1,8 @@
-_: {
+{
+  pkgs,
+  # lib,
+  ...
+}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -12,69 +16,10 @@ _: {
         viAlias = false;
         vimAlias = true;
 
-        # lazy.plugins.crates-nvim = {
-        #   package = "crates-nvim";
-        #   setupOpts = {
-        #     curl_args = ["--cacerts" "/etc/ssl/certs/ca-certificates.crt"];
-        #   };
-        # };
+        # keymaps
+        keymaps = import ./keymaps/default.nix;
 
-        # actual configs
-        keymaps = [
-          # NeoTree keymaps
-          {
-            key = "<leader>e";
-            mode = "n";
-            silent = true;
-            action = ":Neotree toggle<CR>";
-            desc = "Toggle Explorer";
-          }
-          # easy quit keymap
-          {
-            key = "<leader>q";
-            mode = "n";
-            silent = true;
-            action = ":q<CR>";
-            desc = "Quit Current Window";
-          }
-          # ToggleTerm keymaps
-          {
-            key = "<leader>tf";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=float<CR>";
-            desc = "ToggleTerm float";
-          }
-          {
-            key = "<leader>th";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=horizontal<CR>";
-            desc = "ToggleTerm horizontal";
-          }
-          {
-            key = "<leader>tv";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=vertical<CR>";
-            desc = "ToggleTerm vertical";
-          }
-          {
-            key = "<leader>tl";
-            mode = "n";
-            silent = true;
-            action = ":TermExec direction=float cmd=lazygit<CR>";
-            desc = "ToggleTerm lazygit";
-          }
-          {
-            key = "<leader>tk";
-            mode = "n";
-            silent = true;
-            action = ":TermExec direction=float cmd=k9s<CR>";
-            desc = "ToggleTerm k9s";
-          }
-        ];
-
+        # vim options (vim.opt)
         options = {
           tabstop = 2;
           shiftwidth = 2;
@@ -83,6 +28,7 @@ _: {
           wrap = false;
         };
 
+        # custom lua to run at startup
         luaConfigPre = ''
           vim.opt.listchars = {
             multispace = "￮",
@@ -96,6 +42,7 @@ _: {
           vim.opt.list = true
         '';
 
+        # nvim lsp settings
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -108,45 +55,19 @@ _: {
           lightbulb.enable = false;
           trouble.enable = true;
           # lsp-signature is replaced by blink.cmp
-          lspSignature.enable = true;
+          lspSignature.enable = false;
           otter-nvim.enable = true;
           nvim-docs-view.enable = true;
         };
 
-        languages = {
-          enableLSP = true;
-          enableFormat = true;
-          enableTreesitter = true;
-          enableExtraDiagnostics = true;
-
-          nix.enable = true;
-          markdown.enable = true;
-          bash.enable = true;
-          clang.enable = true;
-          css.enable = true;
-          html.enable = true;
-          sql.enable = true;
-          java.enable = true;
-          kotlin.enable = true;
-          ts.enable = true;
-          go.enable = true;
-          lua.enable = true;
-          zig.enable = true;
-          python.enable = true;
-          typst.enable = true;
-          # this requires null-ls, which is not ideal.
-          rust = {
-            enable = true;
-            crates.enable = true;
-          };
-          # Nim LSP is broken on Darwin
-          nim.enable = false;
-        };
+        # language support
+        languages = import ./languages/default.nix {inherit pkgs;};
 
         diagnostics = {
           enable = true;
           config = {
             # this is supposed to work for neo-tree as well.  It does not right now, for some reason.
+            # if this starts to work, we can move to neo-tree instead of nvim-tree
             signs = {
               text = {
                 "vim.diagnostic.severity.ERROR" = " ";
@@ -157,7 +78,6 @@ _: {
             };
             update_in_insert = true;
             virtual_lines = true;
-            #virtual_text = true;
           };
         };
 
@@ -223,15 +143,14 @@ _: {
         autocomplete = {
           # install currently fails due to vendored dependencies & SSL
           blink-cmp = {
-            enable = false;
+            enable = true;
             friendly-snippets.enable = true;
             setupOpts = {
               signature.enabled = true;
-              fuxxy.implementation = "lua";
             };
           };
           nvim-cmp = {
-            enable = true;
+            enable = false;
             setupOpts = {
               view = {
                 entries = "native";
@@ -243,14 +162,38 @@ _: {
 
         filetree = {
           neo-tree = {
-            enable = true;
+            enable = false;
             setupOpts = {
               enable_cursor_hijack = true;
               # custom options for enabling view of hidden files
               filesystem = {
+                hijack_netrw_behavior = "open_current";
                 filtered_items = {
                   visible = true;
                   hide_dotfiles = false;
+                };
+              };
+            };
+          };
+          nvimTree = {
+            enable = true;
+            mappings = {
+              toggle = "<leader>e";
+            };
+            setupOpts = {
+              renderer = {
+                icons = {
+                  git_placement = "right_align";
+                  diagnostics_placement = "right_align";
+                };
+              };
+              diagnostics = {
+                enable = true;
+                icons = {
+                  error = "";
+                  warning = "";
+                  info = "";
+                  hint = "󰌵";
                 };
               };
             };
@@ -270,11 +213,14 @@ _: {
           };
         };
 
-        treesitter.context = {
+        treesitter = {
           enable = true;
-          setupOpts = {
-            max_lines = 2;
-            mode = "cursor";
+          fold = true;
+          context = {
+            enable = true;
+            setupOpts = {
+              max_lines = 2;
+            };
           };
         };
 
@@ -336,16 +282,13 @@ _: {
             };
           };
         };
-
         ui = {
-          borders.enable = true;
           noice.enable = true;
           colorizer.enable = true;
-          modes-nvim.enable = false; # the theme looks terrible with catppuccin
           illuminate.enable = true;
           breadcrumbs = {
             enable = true;
-            navbuddy.enable = false;
+            navbuddy.enable = true;
           };
           smartcolumn = {
             enable = true;
@@ -359,6 +302,9 @@ _: {
           };
           fastaction.enable = true;
         };
+
+        # load some custom plugins not in the nvf flake
+        extraPlugins = import ./plugins/default.nix {inherit pkgs;};
       };
     };
   };

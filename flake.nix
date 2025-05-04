@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      url = "github:notashelf/nvf";
+      url = "github:taylrfnt/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # system things (WSL, darwin)
