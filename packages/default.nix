@@ -11,11 +11,13 @@
     # neovim
     dig
     fastfetch
-    microfetch
+    # Not available on darwin, need to split this out
+    # microfetch
     killall
     nh
     xsel
     openssl
+    pass
 
     # Shells
     zsh
@@ -34,14 +36,14 @@
 
     # Development
     gnumake
-    libgcc
-    go_1_23
+    # nix darwin says this isn't a package.  split this out too
+    # libgcc
     go
     nodejs_23
     jdk17
     zig
     rustup
-    cargo
+    pandoc
 
     # File/Navigation
     eza
@@ -56,33 +58,42 @@
     # Performance
     btop
     htop
-    atop
+    # Not available on darwin, need to split this out
+    # atop
 
     # Fonts
     nerd-fonts.commit-mono
+    nerd-fonts.jetbrains-mono
 
     # Cloud
     azure-cli
     kubectl
     kubelogin
     kns
-    helm
+    kubernetes-helm
     helmfile
     skopeo
     cloudfoundry-cli
     terraform
+
+    # Misc
+    pipes-rs
   ];
 in {
+  # allow named unfree packages (we don't want to install something unfree by accident)
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "terraform"
     ];
+  # enable zsh as the default shell
   programs.zsh.enable = true;
+
+  # user configuration
   users.users = {
     taylor = {
       packages = commonPkgs;
       shell = pkgs.zsh;
     };
-    root.packages = commonPkgs;
+    # root.packages = commonPkgs;
   };
 }

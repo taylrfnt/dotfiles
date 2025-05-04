@@ -140,7 +140,7 @@ _: {
             crates.enable = true;
           };
           # Nim LSP is broken on Darwin
-          nim.enable = true;
+          nim.enable = false;
         };
 
         diagnostics = {

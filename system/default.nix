@@ -1,12 +1,10 @@
 {
-  pkgs,
+  # pkgs,
   lib,
   inputs,
   ...
 }: {
   nix = {
-    #package = pkgs.lix;
-
     channel.enable = false;
     registry = lib.mapAttrs (_: flake: {inherit flake;}) inputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
@@ -27,4 +25,5 @@
       EDITOR = "nvim";
     };
   };
+  system.stateVersion = 6;
 }

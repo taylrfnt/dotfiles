@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,19 +9,29 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # system things (WSL, darwin)
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = {
     self,
     nixpkgs,
-    nixos-wsl,
     hjem,
     nvf,
+    nixos-wsl,
+    nix-darwin,
+    nix-homebrew,
     ...
   } @ inputs: {
     pkgs.config.allowUnfree = true;
+    # WSL flake
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      "nixos-wsl" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         system = "x86_64-linux";
         modules = [
@@ -51,6 +60,24 @@
               };
             };
           }
+        ];
+      };
+    };
+    darwinConfigurations = {
+      "amaterasu" = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./system/default.nix
+          ./system/darwin.nix
+          # nvf
+          nvf.nixosModules.default
+          ./modules/nvf/nvf.nix
+          # nix-homebrew
+          nix-homebrew.darwinModules.nix-homebrew
+          ./modules/nix-homebrew/default.nix
+          # packages
+          ./packages/default.nix
+          ./packages/darwin.nix
         ];
       };
     };
