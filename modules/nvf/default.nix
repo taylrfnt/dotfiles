@@ -152,20 +152,6 @@
         snippets.luasnip.enable = true;
 
         filetree = {
-          neo-tree = {
-            enable = false;
-            setupOpts = {
-              enable_cursor_hijack = true;
-              # custom options for enabling view of hidden files
-              filesystem = {
-                hijack_netrw_behavior = "open_current";
-                filtered_items = {
-                  visible = true;
-                  hide_dotfiles = false;
-                };
-              };
-            };
-          };
           nvimTree = {
             enable = true;
             mappings = {
