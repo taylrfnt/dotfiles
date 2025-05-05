@@ -5,6 +5,10 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:taylrfnt/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +26,7 @@
     self,
     nixpkgs,
     hjem,
+    home-manager,
     nvf,
     nixos-wsl,
     nix-darwin,
@@ -78,10 +83,12 @@
           # packages
           ./packages/default.nix
           ./packages/darwin.nix
-          # hjem (?)
-          hjem.nixosModules.default
+          home-manager.darwinModules.home-manager
           {
-            hjem.users.taylor = ./home/hjem/darwin.nix;
+            # `home-manager` config
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.taylor = import ./home/hm/darwin.nix;
           }
         ];
       };

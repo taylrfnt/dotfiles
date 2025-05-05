@@ -11,8 +11,6 @@
     # neovim
     dig
     fastfetch
-    # Not available on darwin, need to split this out
-    # microfetch
     killall
     nh
     xsel
@@ -36,8 +34,6 @@
 
     # Development
     gnumake
-    # nix darwin says this isn't a package.  split this out too
-    # libgcc
     go
     nodejs_23
     jdk17
@@ -58,12 +54,6 @@
     # Performance
     btop
     htop
-    # Not available on darwin, need to split this out
-    # atop
-
-    # Fonts
-    nerd-fonts.commit-mono
-    nerd-fonts.jetbrains-mono
 
     # Cloud
     azure-cli
@@ -85,6 +75,10 @@ in {
     builtins.elem (lib.getName pkg) [
       "terraform"
     ];
+  imports = [
+    ./fonts/default.nix
+  ];
+
   # enable zsh as the default shell
   programs.zsh.enable = true;
 
