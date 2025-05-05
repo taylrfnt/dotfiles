@@ -42,7 +42,7 @@
           # source our home configs (hjem)
           hjem.nixosModules.default
           {
-            hjem.users.taylor = ./home/hjem.nix;
+            hjem.users.taylor = ./home/hjem/default.nix;
           }
           # add our nvf configurations
           nvf.nixosModules.default
@@ -78,6 +78,11 @@
           # packages
           ./packages/default.nix
           ./packages/darwin.nix
+          # hjem (?)
+          hjem.nixosModules.default
+          {
+            hjem.users.taylor = ./home/hjem/darwin.nix;
+          }
         ];
       };
     };
