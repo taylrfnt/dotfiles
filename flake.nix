@@ -51,7 +51,7 @@
           }
           # add our nvf configurations
           nvf.nixosModules.default
-          ./modules/nvf/nvf.nix
+          ./modules/nvf/wsl.nix
           # source wsl configurations
           nixos-wsl.nixosModules.default
           {
@@ -76,7 +76,7 @@
           ./system/darwin.nix
           # nvf
           nvf.nixosModules.default
-          ./modules/nvf/nvf.nix
+          ./modules/nvf/default.nix
           # nix-homebrew
           nix-homebrew.darwinModules.nix-homebrew
           ./modules/nix-homebrew/default.nix
