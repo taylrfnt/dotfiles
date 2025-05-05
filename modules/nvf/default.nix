@@ -141,7 +141,6 @@
 
         autopairs.nvim-autopairs.enable = true;
         autocomplete = {
-          # install currently fails due to vendored dependencies & SSL
           blink-cmp = {
             enable = true;
             friendly-snippets.enable = true;
@@ -149,15 +148,7 @@
               signature.enabled = true;
             };
           };
-          nvim-cmp = {
-            enable = false;
-            setupOpts = {
-              view = {
-                entries = "native";
-              };
-            };
-          };
-        };
+
         snippets.luasnip.enable = true;
 
         filetree = {
