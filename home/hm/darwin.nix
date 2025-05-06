@@ -19,7 +19,7 @@ in {
   xdg = {
     enable = true;
     configFile.ghostty = {
-      source = mkOutOfStoreSymlink "/Users/taylor/nixos-nextgen/home/hm/files/ghostty/config";
+      source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/home/hm/files/ghostty/config";
       target = "ghostty/config";
     };
   };
