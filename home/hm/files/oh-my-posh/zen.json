@@ -12,7 +12,7 @@
           "backgreund": "transparent",
           "foreground": "#cdd6f4",
           "style": "plain",
-          "template": "{{ if .WSL }}WSL at {{end}}{{.Icon}}  ",
+          "template": "{{ if .WSL }}WSL at {{end}}{{.Icon}} ",
           "type": "os"
         },
         {
