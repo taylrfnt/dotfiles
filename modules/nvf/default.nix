@@ -148,6 +148,7 @@
               signature.enabled = true;
             };
           };
+        };
 
         snippets.luasnip.enable = true;
 
