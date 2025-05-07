@@ -45,8 +45,7 @@
       applicationIndex.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
-          paths = options.darwinApps.value;
-          # paths = config.environment.systemPackages;
+          paths = config.environment.systemPackages;
           pathsToLink = "/Applications";
         };
       in
@@ -58,7 +57,6 @@
 
           rm -rf "$nixApplicationsDir"
           mkdir -p "$nixApplicationsDir"
-          # find ${env}/Applications -maxdepth 1 -type d -name *.app |
           find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
             while read -r src; do
               app_name=$(basename "$src")
