@@ -33,13 +33,9 @@
     brews = [
       "mas" # needs xcode-select (TODO: find automated install)
       "coreutils"
-      "helm"
-      "helmfile"
       "telnet"
       "sequin"
       "asciinema"
-      "openjdk@17"
-      "node@23"
       # "zig"
     ];
 
