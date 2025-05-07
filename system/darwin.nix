@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  options,
   lib,
   ...
 }: {
@@ -41,26 +42,29 @@
 
   system = {
     activationScripts = {
-      # using MacOs aliases instead of symlinks to allow apps to be indexed by spotlight
-      applications.text = let
+      applicationIndex.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
-          paths = config.environment.systemPackages;
+          paths = options.darwinApps.value;
+          # paths = config.environment.systemPackages;
           pathsToLink = "/Applications";
         };
       in
         pkgs.lib.mkForce ''
-          # Set up applications.
+          # using MacOs aliases instead of symlinks to allow apps to be indexed by spotlight
           echo "setting up /Applications..." >&2
-          rm -rf /Applications/Nix\ Apps
-          mkdir -p /Applications/Nix\ Apps
-          echo "cleaning up /Applications/Nix Apps..." >&2
+          applicationsDir="/Applications"
+          nixApplicationsDir="$applications/Nix Apps"
+
+          rm -rf "$nixApplicationsDir"
+          mkdir -p "$nixApplicationsDir"
+          # find ${env}/Applications -maxdepth 1 -type d -name *.app |
           find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-          while read -r src; do
-            app_name=$(basename "$src")
-            echo "copying $src" >&2
-            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-          done
+            while read -r src; do
+              app_name=$(basename "$src")
+              echo "copying $src" >&2
+              ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+            done
         '';
       # automatically catch (most) new prefs without login/restart
       postUserActivation.text = ''
