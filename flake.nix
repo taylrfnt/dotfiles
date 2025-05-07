@@ -36,7 +36,7 @@
     pkgs.config.allowUnfree = true;
     # WSL flake
     nixosConfigurations = {
-      "nixos-wsl" = nixpkgs.lib.nixosSystem {
+      "inari" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         system = "x86_64-linux";
         modules = [
