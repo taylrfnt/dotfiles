@@ -35,7 +35,7 @@
     # Development
     gnumake
     go
-    nodejs_23
+    nodejs_24
     jdk17
     zig
     rustup
