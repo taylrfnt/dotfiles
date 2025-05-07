@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  enableLSP = true;
+  # enableLSP = true;
   enableFormat = true;
   enableTreesitter = true;
   enableExtraDiagnostics = true;
