@@ -39,7 +39,7 @@
   services.xserver.enable = true;
 
   imports = [
-    ./desktop-environment/gnome.nix
+    ./desktop-environment/kde-plasma.nix
   ];
 
   # Enable spice-vdagent
