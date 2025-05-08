@@ -11,6 +11,10 @@
 
     # Terminals
     ghostty
+    alacritty
+    alacritty-theme
+    kitty
+    kitty-themes
 
     # Development
     libgcc
