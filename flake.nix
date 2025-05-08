@@ -75,10 +75,8 @@
           # add hardware configurations
           ./hardware/aarch64-linux.nix
           # add our system configurations
-          ./system/default.nix
           ./system/aarch64-linux.nix
           # add our packages
-          ./packages/default.nix
           ./packages/aarch64-linux.nix
           # source our home configs (hjem)
           hjem.nixosModules.default
