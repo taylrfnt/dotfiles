@@ -83,7 +83,7 @@
           # source our home configs (hjem)
           hjem.nixosModules.default
           {
-            hjem.users.taylor = ./home/hjem/default.nix;
+            hjem.users.taylor = ./home/hjem/aarch64-linux.nix;
           }
           # add our nvf configurations
           nvf.nixosModules.default
