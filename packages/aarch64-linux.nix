@@ -3,9 +3,14 @@
   # lib,
   ...
 }: let
-  wslPkgs = with pkgs; [
+  aarch64LinuxPkgs = with pkgs; [
     # System
     microfetch
+    spice
+    spice-vdagent
+
+    # Terminals
+    ghostty
 
     # Development
     libgcc
@@ -20,9 +25,8 @@ in {
   # user configuration
   users.users = {
     taylor = {
-      packages = wslPkgs;
-      shell = pkgs.zsh;
+      packages = aarch64LinuxPkgs;
     };
-    root.packages = wslPkgs;
+    root.packages = aarch64LinuxPkgs;
   };
 }

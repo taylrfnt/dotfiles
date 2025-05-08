@@ -78,9 +78,9 @@
     isNormalUser = true;
     description = "Taylor";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   #  thunderbird
+    # ];
   };
 
   # Enable automatic login for the user.
@@ -91,19 +91,6 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  systemd.user.services = {
-    #  spice-vdagent-client = {
-    #    enable = true;
-    #    description = "spice-vdagent client";
-    #    wantedBy = [ "graphical-session.target" ];
-    #    serviceConfig = {
-    #      ExecStart = "${pkgs.spice-vdagent}/bin/spice-vdagent -x";
-    #      Restart = "on-failure";
-    #      RestartSec = 5;
-    #    };
-    #  };
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -112,13 +99,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    spice
-    spice-vdagent
-    git
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
