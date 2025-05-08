@@ -85,7 +85,7 @@
           }
           # add our nvf configurations
           nvf.nixosModules.default
-          ./modules/nvf/wsl.nix
+          ./modules/nvf/default.nix
         ];
       };
     };
