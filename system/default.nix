@@ -15,7 +15,7 @@
 
       download-buffer-size = 500000000;
       experimental-features = ["nix-command" "flakes"];
-      # enable community cache for modules (working behind the proxy breaks lots of builds)
+      # enable community cache for modules
       substituters = ["http://nix-community.cachix.org"];
       trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
     };
