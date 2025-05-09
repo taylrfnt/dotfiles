@@ -26,13 +26,18 @@ in {
   imports = [
     ./default.nix
   ];
-  # enable zsh as the default shell
-  programs.zsh.enable = true;
+  programs = {
+    # enable zsh as the default shell
+    zsh.enable = true;
+    # Install firefox.
+    firefox.enable = true;
+  };
 
   # user configuration
   users.users = {
     taylor = {
       packages = aarch64LinuxPkgs;
+      shell = pkgs.zsh;
     };
   };
 }
