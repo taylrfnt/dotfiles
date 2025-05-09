@@ -4,7 +4,12 @@
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.profiles.user.databases = [
     {
-      settings."org/gnome/desktop/interface".cursor-theme = "Adwaita";
+      settings = {
+        # other DEs have habits of touching & deleteding cursor themes, so we need to set this manually
+        "org/gnome/desktop/interface" = {
+          cursor-theme = "Adwaita";
+        };
+      };
     }
   ];
 }

@@ -27,6 +27,8 @@ in {
     ./default.nix
   ];
   programs = {
+    # enable dconf management
+    dconf.enable = true;
     # enable zsh as the default shell
     zsh.enable = true;
     # Install firefox.
