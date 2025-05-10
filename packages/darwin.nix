@@ -20,9 +20,11 @@
     yt-dlp
   ];
 in {
+  imports = [
+    ./default.nix
+  ];
+
   nixpkgs = lib.mkForce {
-    # nixpkgs = {
-    hostPlatform = "aarch64-darwin";
     config = {
       allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
@@ -31,6 +33,7 @@ in {
         ];
     };
   };
+
   # environment.systemPackages is required for the system.activationScripts.applicationIndex to work.
   environment.systemPackages = darwinPkgs;
 
