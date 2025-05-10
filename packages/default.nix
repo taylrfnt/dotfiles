@@ -78,16 +78,7 @@ in {
   imports = [
     ./fonts/default.nix
   ];
-
-  # enable zsh as the default shell
-  programs.zsh.enable = true;
-
-  # user configuration
-  users.users = {
-    taylor = {
-      packages = commonPkgs;
-      shell = pkgs.zsh;
-    };
-    # root.packages = commonPkgs;
+  users.users.taylor = {
+    packages = commonPkgs;
   };
 }

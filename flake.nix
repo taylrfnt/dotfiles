@@ -34,8 +34,8 @@
     ...
   } @ inputs: {
     pkgs.config.allowUnfree = true;
-    # WSL flake
     nixosConfigurations = {
+      # Inari - my WSL system
       "inari" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         system = "x86_64-linux";
@@ -67,7 +67,29 @@
           }
         ];
       };
+      # Fujin - my NixOS VM
+      "fujin" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        system = "aarch64-linux";
+        modules = [
+          # add hardware configurations
+          ./hardware/aarch64-linux.nix
+          # add our system configurations
+          ./system/aarch64-linux.nix
+          # add our packages
+          ./packages/aarch64-linux.nix
+          # source our home configs (hjem)
+          hjem.nixosModules.default
+          {
+            hjem.users.taylor = ./home/hjem/aarch64-linux.nix;
+          }
+          # add our nvf configurations
+          nvf.nixosModules.default
+          ./modules/nvf/default.nix
+        ];
+      };
     };
+    # Amaterasu - my darwin system
     darwinConfigurations = {
       "amaterasu" = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs;};
