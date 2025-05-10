@@ -8,7 +8,7 @@
   history.path = "${config.xdg.dataHome}/zsh/history";
   shellAliases = {
     vim = "nvim";
-    ls = "ls -altr";
+    ls = "eza -la --icons=always";
     k = "kubectl";
     yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/config";
     # k9s fix (https://github.com/derailed/k9s/issues/3049)
