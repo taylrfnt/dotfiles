@@ -94,7 +94,6 @@
       "amaterasu" = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./system/default.nix
           ./system/darwin.nix
           # nvf
           nvf.nixosModules.default
@@ -103,14 +102,15 @@
           nix-homebrew.darwinModules.nix-homebrew
           ./modules/nix-homebrew/default.nix
           # packages
-          ./packages/default.nix
           ./packages/darwin.nix
           home-manager.darwinModules.home-manager
           {
             # `home-manager` config
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.taylor = import ./home/hm/darwin.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.taylor = import ./home/hm/darwin.nix;
+            };
           }
         ];
       };

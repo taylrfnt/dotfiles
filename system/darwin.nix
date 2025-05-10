@@ -5,6 +5,16 @@
   lib,
   ...
 }: {
+  # set hostplatform
+  nixpkgs = {
+    # nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+  };
+
+  imports = [
+    ./default.nix
+  ];
+
   # user setup
   users.users.taylor = {
     name = "taylor";
@@ -145,4 +155,6 @@
       };
     };
   };
+
+  system.stateVersion = 6;
 }
