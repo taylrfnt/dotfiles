@@ -22,7 +22,7 @@
     ## ghostty fix
     export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
-    # add theduck support
+    # add thefuck support
     eval $(thefuck --alias)
 
     keychain
