@@ -6,6 +6,7 @@
   commonPkgs = with pkgs; [
     # System
     git
+    keychain
     gnupg
     # nvf handles this now...
     # neovim
