@@ -25,7 +25,7 @@
     # add thefuck support
     eval $(thefuck --alias)
 
-    keychain
+    keychain -q
     source ~/.keychain/$HOST-sh
 
     ############################################################################
