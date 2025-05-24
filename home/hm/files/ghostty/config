@@ -27,8 +27,8 @@ focus-follows-mouse = true
 ## Misc
 copy-on-select = clipboard
 confirm-close-surface = false
-quit-after-last-window-closed = true
-window-save-state = default
+quit-after-last-window-closed = false
+window-save-state = always
 mouse-hide-while-typing = true
 macos-non-native-fullscreen = true
 
