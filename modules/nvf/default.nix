@@ -125,12 +125,7 @@
           indent-blankline.enable = true;
         };
 
-        statusline = {
-          lualine = {
-            enable = true;
-            theme = "catppuccin";
-          };
-        };
+        statusline = import ./statusline/default.nix;
 
         theme = {
           enable = true;
