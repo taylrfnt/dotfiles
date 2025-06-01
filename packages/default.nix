@@ -21,7 +21,9 @@
     # Shells
     zsh
     comma
-    thefuck
+    # replace thefuck w pay-respects
+    # thefuck
+    pay-respects
     oh-my-posh
     zsh-vi-mode
     zsh-autosuggestions

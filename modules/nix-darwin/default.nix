@@ -80,6 +80,7 @@
     casks = [
       "firefox@nightly"
       "google-chrome"
+      "zen"
       "iina"
       "the-unarchiver"
       "bitwarden"
