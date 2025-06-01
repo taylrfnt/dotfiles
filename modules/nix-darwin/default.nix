@@ -107,6 +107,7 @@
         persistent-apps = [
           "/System/Applications/Launchpad.app"
           "/Applications/Firefox Nightly.app"
+          "/Applications/Zen.app/"
           "/Applications/Google Chrome.app/"
           "/Applications/Bitwarden.app"
           "/System/Applications/Messages.app"
