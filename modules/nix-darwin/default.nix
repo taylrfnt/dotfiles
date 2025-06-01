@@ -1,79 +1,5 @@
 {pkgs, ...}: {
   #MacOS system configuration
-  defaults = {
-    ".GlobalPreferences" = {
-      "com.apple.mouse.scaling" = 1.0;
-      "com.apple.sound.beep.sound" = "/System/Library/Sounds/Blow.aiff";
-    };
-    dock = {
-      autohide = true;
-      autohide-delay = 0.0; # no delay for auto-hide/show
-      orientation = "bottom";
-      mineffect = "scale";
-      minimize-to-application = true;
-      magnification = false;
-      show-recents = false; # hide recent apps from dock
-      persistent-apps = [
-        "/System/Applications/Launchpad.app"
-        "/Applications/Firefox Nightly.app"
-        "/Applications/Google Chrome.app/"
-        "/Applications/Bitwarden.app"
-        "/System/Applications/Messages.app"
-        "/System/Applications/FaceTime.app"
-        "/Applications/Thunderbird.app"
-        "/System/Applications/Photos.app"
-        "/System/Applications/TV.app"
-        "/System/Applications/Music.app"
-        "/System/Applications/News.app"
-        "${pkgs.vesktop}/Applications/Vesktop.app"
-        "/Applications/Obsidian.app/"
-        "/Applications/IINA.app/"
-        "/Applications/Ghostty.app"
-        "/System/Applications/App Store.app"
-        "/System/Applications/System Settings.app"
-        "/System/Applications/iPhone Mirroring.app"
-      ];
-      persistent-others = [
-        "/Users/taylor/Downloads"
-      ];
-    };
-
-    finder = {
-      AppleShowAllExtensions = true;
-      ShowPathbar = true;
-      FXEnableExtensionChangeWarning = false;
-      FXPreferredViewStyle = "clmv";
-      _FXSortFoldersFirst = true;
-    };
-
-    loginwindow = {
-      GuestEnabled = false;
-      LoginwindowText = " ";
-      SHOWFULLNAME = false;
-    };
-
-    menuExtraClock = {
-      Show24Hour = true;
-      ShowSeconds = true;
-    };
-
-    NSGlobalDomain = {
-      AppleICUForce24HourTime = true;
-      AppleInterfaceStyle = "Dark";
-      "com.apple.swipescrolldirection" = false;
-      NSAutomaticCapitalizationEnabled = false;
-      NSAutomaticInlinePredictionEnabled = false;
-      NSAutomaticPeriodSubstitutionEnabled = true;
-      NSDocumentSaveNewDocumentsToCloud = false;
-      NSWindowShouldDragOnGesture = true;
-    };
-
-    screencapture = {
-      type = "png";
-      target = "clipboard";
-    };
-  };
-
   # homebrew installs
   homebrew = {
     enable = true;
@@ -156,10 +82,96 @@
     };
   };
   system = {
-    # automatically catch (most) new prefs without login/restart
-    postActivation.text = ''
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    '';
     primaryUser = "taylor";
+
+    activationScripts = {
+      # automatically catch (most) new prefs without login/restart
+      postActivation.text = ''
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      '';
+    };
+
+    defaults = {
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = 1.0;
+        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Blow.aiff";
+      };
+      dock = {
+        autohide = true;
+        autohide-delay = 0.0; # no delay for auto-hide/show
+        orientation = "bottom";
+        mineffect = "scale";
+        minimize-to-application = true;
+        magnification = false;
+        show-recents = false; # hide recent apps from dock
+        persistent-apps = [
+          "/System/Applications/Launchpad.app"
+          "/Applications/Firefox Nightly.app"
+          "/Applications/Google Chrome.app/"
+          "/Applications/Bitwarden.app"
+          "/System/Applications/Messages.app"
+          "/System/Applications/FaceTime.app"
+          "/Applications/Thunderbird.app"
+          "/System/Applications/Photos.app"
+          "/System/Applications/TV.app"
+          "/System/Applications/Music.app"
+          "/System/Applications/News.app"
+          "${pkgs.vesktop}/Applications/Vesktop.app"
+          "/Applications/Obsidian.app/"
+          "/Applications/IINA.app/"
+          "/Applications/Ghostty.app"
+          "/System/Applications/App Store.app"
+          "/System/Applications/System Settings.app"
+          "/System/Applications/iPhone Mirroring.app"
+        ];
+        persistent-others = [
+          "/Users/taylor/Downloads"
+        ];
+      };
+
+      finder = {
+        AppleShowAllExtensions = true;
+        ShowPathbar = true;
+        FXEnableExtensionChangeWarning = false;
+        FXPreferredViewStyle = "clmv";
+        _FXSortFoldersFirst = true;
+      };
+
+      loginwindow = {
+        GuestEnabled = false;
+        LoginwindowText = " ";
+        SHOWFULLNAME = false;
+      };
+
+      menuExtraClock = {
+        Show24Hour = true;
+        ShowSeconds = true;
+      };
+
+      NSGlobalDomain = {
+        AppleICUForce24HourTime = true;
+        AppleInterfaceStyle = "Dark";
+        "com.apple.swipescrolldirection" = false;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticInlinePredictionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = true;
+        NSDocumentSaveNewDocumentsToCloud = false;
+        NSWindowShouldDragOnGesture = true;
+      };
+
+      WindowManager = {
+        AutoHide = true;
+        GloballyEnabled = true;
+      };
+
+      screencapture = {
+        type = "png";
+        target = "clipboard";
+      };
+    };
+  };
+  power = {
+    restartAfterFreeze = true;
+    restartAfterPowerFailure = true;
   };
 }
