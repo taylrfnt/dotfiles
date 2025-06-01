@@ -1,6 +1,6 @@
 {
   pkgs,
-  # lib,
+  lib,
   ...
 }: {
   programs.nvf = {
@@ -41,6 +41,21 @@
           }
           vim.opt.list = true
         '';
+
+        # autocmd
+        autocmds = [
+          {
+            enable = true;
+            callback = lib.mkLuaInline ''
+              function()
+                vim.b.completion = false
+              end
+            '';
+            desc = "Disable blink.cmp completion for NvimTree buffers.";
+            event = ["BufEnter"];
+            pattern = ["NvimTree"];
+          }
+        ];
 
         # nvim lsp settings
         lsp = {
@@ -138,14 +153,17 @@
         autocomplete = {
           blink-cmp = {
             enable = true;
-            friendly-snippets.enable = true;
+            # friendly-snippets.enable = true;
             setupOpts = {
+              cmdline = {
+                keymap.preset = "default";
+              };
               signature.enabled = true;
             };
           };
         };
 
-        snippets.luasnip.enable = true;
+        # snippets.luasnip.enable = true;
 
         filetree = {
           nvimTree = {
