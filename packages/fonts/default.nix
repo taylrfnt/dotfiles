@@ -11,7 +11,6 @@
           runHook postInstall
         '';
       });
-      # in [/. "${commit-mono-otf}"];
     in [
       "${commit-mono-otf}"
       pkgs.nerd-fonts.symbols-only
