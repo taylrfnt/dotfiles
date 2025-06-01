@@ -94,15 +94,15 @@
       "amaterasu" = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          #nix-homebrew options
+          nix-homebrew.darwinModules.nix-homebrew
           ./system/darwin.nix
+          # packages
+          ./packages/darwin.nix
           # nvf
           nvf.nixosModules.default
           ./modules/nvf/default.nix
-          # nix-homebrew
-          nix-homebrew.darwinModules.nix-homebrew
-          ./modules/nix-homebrew/default.nix
-          # packages
-          ./packages/darwin.nix
+          # home manager
           home-manager.darwinModules.home-manager
           {
             # `home-manager` config

@@ -15,6 +15,7 @@
   imports = [
     ./default.nix
     ../modules/nix-darwin/default.nix
+    ../modules/nix-homebrew/default.nix
   ];
 
   # user setup
