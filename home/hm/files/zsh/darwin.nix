@@ -22,9 +22,8 @@
     ## ghostty fix
     export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
-    # add thefuck support
-    eval $(thefuck --alias)
-
+    # add pay-respects support
+    eval "$(pay-respects zsh --alias)"
     keychain -q
     source ~/.keychain/$HOST-sh
 
