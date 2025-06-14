@@ -17,5 +17,8 @@
 
     # record into mp4 once downloaded via ffmpeg
     --recode-video mp4
+
+    # use h264 instead of vp09 or other codecs
+    -S vcodec:h264
   '';
 }
