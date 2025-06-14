@@ -25,6 +25,7 @@
       "audio-hijack"
       "steam"
       "deskpad"
+      "protonvpn"
     ];
 
     brews = [
