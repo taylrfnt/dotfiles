@@ -102,6 +102,9 @@
           # nvf
           nvf.nixosModules.default
           ./modules/nvf/default.nix
+          # # hjem
+          # hjem.nixosModules.default
+          # ./home/hjem/darwin.nix
           # home manager
           home-manager.darwinModules.home-manager
           {

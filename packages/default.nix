@@ -17,6 +17,7 @@
     xsel
     openssl
     pass
+    smfh
 
     # Shells
     zsh

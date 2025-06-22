@@ -3,6 +3,7 @@
     ./default.nix
   ];
 
+  directory = "/home/taylor";
   files = {
     # ghostty
     ".config/ghostty/config" = {
