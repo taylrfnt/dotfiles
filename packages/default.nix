@@ -24,7 +24,7 @@
     comma
     # replace thefuck w pay-respects
     # thefuck
-    pay-respects
+    # pay-respects
     oh-my-posh
     zsh-vi-mode
     zsh-autosuggestions
