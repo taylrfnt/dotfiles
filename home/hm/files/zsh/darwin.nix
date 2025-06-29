@@ -22,8 +22,7 @@
     ## ghostty fix
     export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
-    # add pay-respects support
-    eval "$(pay-respects zsh --alias)"
+    ## init keychain at shell startup
     keychain -q
     source ~/.keychain/$HOST-sh
 
