@@ -18,6 +18,7 @@
     openssl
     pass
     smfh
+    gettext
 
     # Shells
     zsh
