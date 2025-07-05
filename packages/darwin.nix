@@ -6,6 +6,7 @@
   darwinPkgs = with pkgs; [
     # nix needs this package to make aliases on macOS
     mkalias
+    container
 
     # darwin apps
     raycast
