@@ -22,6 +22,7 @@
       "oversight"
       "keycastr"
       "obs"
+      "orbstack"
       "audio-hijack"
       "steam"
       "deskpad"
