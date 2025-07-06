@@ -107,7 +107,7 @@
         magnification = false;
         show-recents = false; # hide recent apps from dock
         persistent-apps = [
-          "/System/Applications/Launchpad.app"
+          "/System/Applications/Apps.app"
           "/Applications/Firefox Nightly.app"
           "/Applications/Zen.app/"
           "/Applications/Google Chrome.app/"
