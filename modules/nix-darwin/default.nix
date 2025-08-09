@@ -27,6 +27,7 @@
       "steam"
       "deskpad"
       "protonvpn"
+      "affinity-photo"
     ];
 
     brews = [
