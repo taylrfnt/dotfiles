@@ -1,5 +1,5 @@
 {
-  # pkgs,
+  pkgs,
   lib,
   inputs,
   ...
@@ -20,10 +20,22 @@
       trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
     };
   };
+
+  # set any env vars
   environment = {
     variables = {
       EDITOR = "nvim";
     };
   };
+  # user setup
+  users.users.taylor = {
+    name = "taylor";
+    description = "Taylor";
+    home = "/Users/taylor";
+    shell = pkgs.zsh;
+  };
+  # enable zsh support
+  programs.zsh.enable = true;
+
   # system.stateVersion = "6";
 }
