@@ -46,12 +46,10 @@
           ./packages/default.nix
           # source our home configs (hjem)
           hjem.nixosModules.default
-          {
-            hjem.users.taylor = ./home/hjem/default.nix;
-          }
+          ./home/hjem/default.nix
           # add our nvf configurations
           nvf.nixosModules.default
-          ./modules/nvf/wsl.nix
+          ./modules/nvf/default.nix
           # source wsl configurations
           nixos-wsl.nixosModules.default
           {
