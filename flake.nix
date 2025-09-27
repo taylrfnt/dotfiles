@@ -43,7 +43,7 @@
           # add our system configurations
           ./system/default.nix
           # add our packages
-          ./packages/default.nix
+          ./packages/wsl.nix
           # source our home configs (hjem)
           hjem.nixosModules.default
           ./home/hjem/default.nix

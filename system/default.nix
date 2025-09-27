@@ -27,13 +27,7 @@
       EDITOR = "nvim";
     };
   };
-  # user setup
-  users.users.taylor = {
-    name = "taylor";
-    description = "Taylor";
-    home = "/Users/taylor";
-    shell = pkgs.zsh;
-  };
+
   # enable zsh support
   programs.zsh.enable = true;
 
