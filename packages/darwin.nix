@@ -20,6 +20,9 @@
     # misc other darwin-specific packages
     yt-dlp
     hugo
+
+    opencode
+    ollama
   ];
 in {
   imports = [

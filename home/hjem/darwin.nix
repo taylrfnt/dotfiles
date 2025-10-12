@@ -70,6 +70,15 @@
             target = ".config/ghostty/config";
             source = ./files/ghostty/default-config;
           };
+
+          # opencode
+          ".config/opnecode/opencode.json" = {
+            enable = true;
+            executable = false;
+            clobber = true;
+            target = ".config/opencode/opencode.json";
+            source = ./files/opencode/default.json;
+          };
         };
       };
     };
