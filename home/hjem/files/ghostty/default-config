@@ -2,7 +2,7 @@
 ## sets or run `ghostty +list-configuration --default`
 
 ## Appearance
-theme = catppuccin-mocha
+theme = "Catppuccin Mocha"
 window-colorspace = display-p3
 split-divider-color = #585b70
 macos-titlebar-proxy-icon = hidden
