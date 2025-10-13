@@ -37,7 +37,11 @@
   # smart-splits
   {
     key = "<C-h>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_left";
     lua = true;
@@ -45,7 +49,11 @@
   }
   {
     key = "<C-j>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_down";
     lua = true;
@@ -53,7 +61,11 @@
   }
   {
     key = "<C-k>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_up";
     lua = true;
@@ -61,7 +73,11 @@
   }
   {
     key = "<C-l>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_right";
     lua = true;
