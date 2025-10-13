@@ -45,10 +45,10 @@
   python.enable = true;
   typst.enable = true;
   # this requires null-ls, which is not ideal.
-  rust = {
-    enable = true;
-    crates.enable = true;
-  };
+  # rust = {
+  #   enable = true;
+  #   crates.enable = true;
+  # };
   # Nim LSP is broken on Darwin
   nim.enable = false;
 }

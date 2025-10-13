@@ -18,4 +18,10 @@ with pkgs.vimPlugins; {
     '';
     package = smart-splits-nvim;
   };
+  sidekick = {
+    setup = ''
+      require('sidekick').setup({})
+    '';
+    package = sidekick-nvim;
+  };
 }

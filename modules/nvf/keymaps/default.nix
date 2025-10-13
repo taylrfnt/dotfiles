@@ -100,6 +100,77 @@
     desc = "Resize split right";
   }
 
+  # sidekick
+  {
+    key = "<C-.>";
+    mode = [
+      "n"
+      "t"
+      "i"
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').toggle() end";
+    lua = true;
+    desc = "Sidekick Toggle";
+  }
+  {
+    key = "<leader>aa";
+    mode = "n";
+    silent = true;
+    action = "function() require('sidekick.cli').toggle() end";
+    lua = true;
+    desc = "Sidekick Toggle CLI";
+  }
+  {
+    key = "<leader>as";
+    mode = "n";
+    silent = true;
+    action = "function() require('sidekick.cli').select() end";
+    lua = true;
+    desc = "Sidekick Select CLI";
+  }
+  {
+    key = "<leader>ad";
+    mode = "n";
+    silent = true;
+    action = "function() require('sidekick.cli').close() end";
+    lua = true;
+    desc = "Detach Sidekick CLI Session";
+  }
+  {
+    key = "<leader>at";
+    mode = [
+      "x"
+      "n"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{this}\"}) end";
+    lua = true;
+    desc = "Send This";
+  }
+  {
+    key = "<leader>af";
+    mode = [
+      "v"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{file}\"}) end";
+    lua = true;
+    desc = "Send File";
+  }
+  {
+    key = "<leader>ap";
+    mode = [
+      "n"
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').prompt() end";
+    lua = true;
+    desc = "Sidekick Select Prompt";
+  }
+
   # ToggleTerm keymaps
   {
     key = "<leader>tf";

@@ -6,6 +6,7 @@
   enable = true;
   package = pkgs.opencode;
   settings = {
+    theme = "system";
     provider = {
       ollama = {
         npm = "@ai-sdk/openai-compatible";
