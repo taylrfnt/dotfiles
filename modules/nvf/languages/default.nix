@@ -21,7 +21,7 @@
         "nixfmt"
       ];
     };
-    lsp.server = [ "nil" ];
+    lsp.servers = [ "nil" ];
   };
   markdown = {
     enable = true;
