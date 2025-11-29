@@ -21,8 +21,24 @@ with pkgs.vimPlugins;
   };
   sidekick = {
     setup = ''
-      require('sidekick').setup({})
+      require('sidekick').setup({
+        cli = {
+          tools = {
+            amp = {
+              cmd = { "amp", "--ide" },
+            },
+          },
+        },
+      })
     '';
     package = sidekick-nvim;
+  };
+  amp = {
+    setup = ''
+      require('amp').setup({
+        auto_start = true, log_level = info
+      })
+    '';
+    package = amp-nvim;
   };
 }
