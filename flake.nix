@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hjem = {
-      url = "github:feel-co/hjem";
+      url = "github:feel-co/hjem/refactor-3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      url = "github:NotAShelf/nvf";
+      url = "github:NotAShelf/nvf/v0.8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # system things (WSL, darwin)
@@ -104,15 +104,19 @@
           # hjem.nixosModules.default
           # ./home/hjem/darwin.nix
           # home manager
-          home-manager.darwinModules.home-manager
-          {
-            # `home-manager` config
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.taylor = import ./home/hm/darwin.nix;
-            };
-          }
+          # home-manager.darwinModules.home-manager
+          # {
+          #   # `home-manager` config
+          #   home-manager = {
+          #     minimal = true;
+          #     useGlobalPkgs = true;
+          #     useUserPackages = true;
+          #     users.taylor = import ./home/hm/darwin.nix;
+          #   };
+          # }
+          # source our home configs (hjem)
+          hjem.darwinModules.default
+          ./home/hjem/darwin.nix
         ];
       };
     };

@@ -37,7 +37,11 @@
   # smart-splits
   {
     key = "<C-h>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_left";
     lua = true;
@@ -45,7 +49,11 @@
   }
   {
     key = "<C-j>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_down";
     lua = true;
@@ -53,7 +61,11 @@
   }
   {
     key = "<C-k>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_up";
     lua = true;
@@ -61,7 +73,11 @@
   }
   {
     key = "<C-l>";
-    mode = "n";
+    # mode = "n";
+    mode = [
+      "n"
+      "t"
+    ];
     silent = true;
     action = "require('smart-splits').move_cursor_right";
     lua = true;
@@ -98,6 +114,102 @@
     action = "require('smart-splits').resize_right";
     lua = true;
     desc = "Resize split right";
+  }
+
+  # sidekick
+  {
+    key = "<C-.>";
+    mode = [
+      "n"
+      "t"
+      "i"
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').toggle() end";
+    lua = true;
+    desc = "Sidekick Toggle";
+  }
+  {
+    key = "<leader>aa";
+    mode = "n";
+    silent = true;
+    action = "function() require('sidekick.cli').toggle() end";
+    lua = true;
+    desc = "Sidekick Toggle CLI";
+  }
+  {
+    key = "<leader>as";
+    mode = "n";
+    silent = true;
+    action = "function() require('sidekick.cli').select({ filter = { installed =true} }) end";
+    lua = true;
+    desc = "Sidekick Select CLI";
+  }
+  {
+    key = "<leader>ad";
+    mode = [
+      "n"
+      "t"
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').close() end";
+    lua = true;
+    desc = "Detach Sidekick CLI Session";
+  }
+  {
+    key = "<leader>at";
+    mode = [
+      "x"
+      "n"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{this}\"}) end";
+    lua = true;
+    desc = "Send This";
+  }
+  {
+    key = "<leader>af";
+    mode = [
+      "v"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{file}\"}) end";
+    lua = true;
+    desc = "Send File";
+  }
+  {
+    key = "<leader>av";
+    mode = [
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{selection}\"}) end";
+    lua = true;
+    desc = "Send Visual Selection";
+  }
+  {
+    key = "<leader>ap";
+    mode = [
+      "n"
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').prompt() end";
+    lua = true;
+    desc = "Sidekick Select Prompt";
+  }
+  {
+    key = "<leader>ag";
+    mode = [
+      "x"
+      "n"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').toggle({ name = \"{copilot}\", focus =true }) end";
+    lua = true;
+    desc = "Sidekick Toggle Copilot";
   }
 
   # ToggleTerm keymaps

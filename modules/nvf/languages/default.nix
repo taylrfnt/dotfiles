@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # enableLSP = true;
   enableFormat = true;
   enableTreesitter = true;
@@ -15,9 +16,12 @@
     };
     format = {
       enable = true;
-      type = "alejandra";
+      type = [
+        "alejandra"
+        "nixfmt"
+      ];
     };
-    lsp.server = "nil";
+    lsp.servers = [ "nil" ];
   };
   markdown = {
     enable = true;
@@ -35,8 +39,10 @@
     enable = true;
     format = {
       enable = true;
-      package = pkgs.gofumpt;
-      type = "gofumpt";
+      type = [
+        "gofumpt"
+        "golines"
+      ];
     };
   };
   helm.enable = true;
@@ -45,10 +51,10 @@
   python.enable = true;
   typst.enable = true;
   # this requires null-ls, which is not ideal.
-  rust = {
-    enable = true;
-    crates.enable = true;
-  };
+  # rust = {
+  #   enable = true;
+  #   crates.enable = true;
+  # };
   # Nim LSP is broken on Darwin
   nim.enable = false;
 }

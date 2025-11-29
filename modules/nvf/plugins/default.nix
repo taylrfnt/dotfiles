@@ -1,5 +1,6 @@
-{pkgs, ...}:
-with pkgs.vimPlugins; {
+{ pkgs, ... }:
+with pkgs.vimPlugins;
+{
   smart-splits = {
     setup = ''
       require('smart-splits').setup({
@@ -17,5 +18,11 @@ with pkgs.vimPlugins; {
       })
     '';
     package = smart-splits-nvim;
+  };
+  sidekick = {
+    setup = ''
+      require('sidekick').setup({})
+    '';
+    package = sidekick-nvim;
   };
 }

@@ -37,5 +37,6 @@ in {
     # ghostty = import ./files/ghostty/default.nix {inherit config pkgs;};
     alacritty = import ./files/alacritty/default.nix {inherit pkgs;};
     kitty = import ./files/kitty/default.nix {inherit config pkgs;};
+    opencode = import ./files/opencode/default.nix {inherit pkgs;};
   };
 }

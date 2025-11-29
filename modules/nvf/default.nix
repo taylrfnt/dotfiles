@@ -64,7 +64,7 @@
           lspconfig = {
             enable = true;
           };
-          null-ls.enable = true;
+          null-ls.enable = false;
           # NOTE: lspkind requires nvim.cmp or blink.cmp
           lspkind.enable = true;
           lightbulb.enable = false;

@@ -20,6 +20,12 @@
     # misc other darwin-specific packages
     yt-dlp
     hugo
+
+    opencode
+    # ollama
+    tmux
+    github-copilot-cli
+    crush
   ];
 in {
   imports = [
@@ -32,6 +38,9 @@ in {
         builtins.elem (lib.getName pkg) [
           "terraform"
           "raycast"
+          "copilot-language-server"
+          "github-copilot-cli"
+          "crush"
         ];
     };
   };

@@ -10,7 +10,7 @@ title = " "
 
 ## Fonts
 font-family = ""
-font-family = CommitMono Nerd Font
+font-family = "CommitMono"
 font-feature = +cv07
 font-size = 16
 font-thicken = true
@@ -27,8 +27,8 @@ focus-follows-mouse = true
 ## Misc
 copy-on-select = clipboard
 confirm-close-surface = false
-quit-after-last-window-closed = true
-window-save-state = default
+quit-after-last-window-closed = false
+window-save-state = always
 mouse-hide-while-typing = true
 macos-non-native-fullscreen = true
 
@@ -40,3 +40,4 @@ keybind = super+shift+left=resize_split:left,10
 keybind = super+shift+right=resize_split:right,10
 keybind = super+shift+up=resize_split:up,10
 keybind = super+shift+down=resize_split:down,10
+keybind = super+b=copy_url_to_clipboard
