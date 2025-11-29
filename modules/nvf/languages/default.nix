@@ -15,7 +15,7 @@
     };
     format = {
       enable = true;
-      type = "alejandra";
+      type = ["alejandra" "deadnix"];
     };
     lsp.server = "nil";
   };
