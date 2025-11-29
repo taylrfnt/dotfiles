@@ -19,6 +19,7 @@
     pass
     smfh
     gettext
+    man
 
     # Shells
     zsh

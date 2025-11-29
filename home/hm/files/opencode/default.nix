@@ -18,6 +18,9 @@
           "qwen2.5-coder" = {
             name = "Qwen2.5 Coder";
           };
+          "qwen3-coder" = {
+            name = "Qwen 3 Coder (30B)";
+          };
           # distills are broken right now - https://github.com/ollama/ollama/issues/8517
           # "deepseek-coder-v2" = {
           #   name = "Deepseek Coder v2";

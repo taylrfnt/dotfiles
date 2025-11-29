@@ -105,9 +105,11 @@
           # ./home/hjem/darwin.nix
           # home manager
           home-manager.darwinModules.home-manager
+
           {
             # `home-manager` config
             home-manager = {
+              minimal = true;
               useGlobalPkgs = true;
               useUserPackages = true;
               users.taylor = import ./home/hm/darwin.nix;
