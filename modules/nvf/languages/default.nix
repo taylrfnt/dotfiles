@@ -15,7 +15,7 @@
     };
     format = {
       enable = true;
-      type = ["alejandra" "deadnix"];
+      type = ["alejandra" "nixfmt"];
     };
     lsp.server = "nil";
   };
@@ -35,7 +35,6 @@
     enable = true;
     format = {
       enable = true;
-      package = pkgs.gofumpt;
       type = "gofumpt";
     };
   };
