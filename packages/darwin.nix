@@ -22,7 +22,7 @@
     hugo
 
     opencode
-    ollama
+    # ollama
     tmux
     github-copilot-cli
     crush
