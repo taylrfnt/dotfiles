@@ -2,11 +2,13 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   commonPkgs = with pkgs; [
     # System
     git
     keychain
+    bitwarden-cli
     gnupg
     # nvf handles this now...
     # neovim
@@ -75,9 +77,11 @@
     # Misc
     pipes-rs
   ];
-in {
+in
+{
   # allow named unfree packages (we don't want to install something unfree by accident)
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "terraform"
     ];
