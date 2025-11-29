@@ -1,5 +1,6 @@
-{pkgs, ...}:
-with pkgs.vimPlugins; {
+{ pkgs, ... }:
+with pkgs.vimPlugins;
+{
   smart-splits = {
     setup = ''
       require('smart-splits').setup({

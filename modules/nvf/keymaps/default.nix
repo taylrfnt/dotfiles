@@ -142,13 +142,17 @@
     key = "<leader>as";
     mode = "n";
     silent = true;
-    action = "function() require('sidekick.cli').select() end";
+    action = "function() require('sidekick.cli').select({ filter = { installed =true} }) end";
     lua = true;
     desc = "Sidekick Select CLI";
   }
   {
     key = "<leader>ad";
-    mode = "n";
+    mode = [
+      "n"
+      "t"
+      "x"
+    ];
     silent = true;
     action = "function() require('sidekick.cli').close() end";
     lua = true;
@@ -176,6 +180,16 @@
     desc = "Send File";
   }
   {
+    key = "<leader>av";
+    mode = [
+      "x"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').send({ msg = \"{selection}\"}) end";
+    lua = true;
+    desc = "Send Visual Selection";
+  }
+  {
     key = "<leader>ap";
     mode = [
       "n"
@@ -185,6 +199,17 @@
     action = "function() require('sidekick.cli').prompt() end";
     lua = true;
     desc = "Sidekick Select Prompt";
+  }
+  {
+    key = "<leader>ag";
+    mode = [
+      "x"
+      "n"
+    ];
+    silent = true;
+    action = "function() require('sidekick.cli').toggle({ name = \"{copilot}\", focus =true }) end";
+    lua = true;
+    desc = "Sidekick Toggle Copilot";
   }
 
   # ToggleTerm keymaps
