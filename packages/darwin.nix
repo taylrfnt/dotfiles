@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   darwinPkgs = with pkgs; [
     # nix needs this package to make aliases on macOS
     mkalias
@@ -26,21 +27,25 @@
     tmux
     github-copilot-cli
     crush
+    amp-cli
   ];
-in {
+in
+{
   imports = [
     ./default.nix
   ];
 
   nixpkgs = lib.mkForce {
     config = {
-      allowUnfreePredicate = pkg:
+      allowUnfreePredicate =
+        pkg:
         builtins.elem (lib.getName pkg) [
           "terraform"
           "raycast"
           "copilot-language-server"
           "github-copilot-cli"
           "crush"
+          "amp-cli"
         ];
     };
   };
