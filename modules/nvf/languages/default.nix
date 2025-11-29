@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # enableLSP = true;
   enableFormat = true;
   enableTreesitter = true;
@@ -15,9 +16,12 @@
     };
     format = {
       enable = true;
-      type = ["alejandra" "nixfmt"];
+      type = [
+        "alejandra"
+        "nixfmt"
+      ];
     };
-    lsp.server = "nil";
+    lsp.server = [ "nil" ];
   };
   markdown = {
     enable = true;
@@ -35,7 +39,10 @@
     enable = true;
     format = {
       enable = true;
-      type = "gofumpt";
+      type = [
+        "gofumpt"
+        "golines"
+      ];
     };
   };
   helm.enable = true;

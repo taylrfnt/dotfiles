@@ -4,7 +4,7 @@
   userName = "taylrfnt";
   userEmail = "taylr.fnt@gmail.com";
   signing.signByDefault = true;
-  signing.key = "~/keys/ssh/github/amaterasu";
+  signing.key = "~taylor/keys/ssh/github/amaterasu";
   extraConfig = {
     pull = {
       rebase = true;
