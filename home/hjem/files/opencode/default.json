@@ -11,6 +11,9 @@
       "models": {
         "qwen2.5-coder": {
           "name": "Qwen2.5 Coder (7B)"
+        },
+        "qwen3-coder": {
+          "name": "Qwen 3 Coder (30B)"
         }
       }
     }

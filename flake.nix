@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hjem = {
-      url = "github:feel-co/hjem";
+      url = "github:feel-co/hjem/refactor-3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -104,17 +104,19 @@
           # hjem.nixosModules.default
           # ./home/hjem/darwin.nix
           # home manager
-          home-manager.darwinModules.home-manager
-
-          {
-            # `home-manager` config
-            home-manager = {
-              minimal = true;
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.taylor = import ./home/hm/darwin.nix;
-            };
-          }
+          # home-manager.darwinModules.home-manager
+          # {
+          #   # `home-manager` config
+          #   home-manager = {
+          #     minimal = true;
+          #     useGlobalPkgs = true;
+          #     useUserPackages = true;
+          #     users.taylor = import ./home/hm/darwin.nix;
+          #   };
+          # }
+          # source our home configs (hjem)
+          hjem.darwinModules.default
+          ./home/hjem/darwin.nix
         ];
       };
     };
