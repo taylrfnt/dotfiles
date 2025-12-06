@@ -2,10 +2,12 @@
   pkgs,
   # lib,
   ...
-}: let
+}:
+let
   wslPkgs = with pkgs; [
     # System
     microfetch
+    socat
 
     # Development
     libgcc
@@ -13,7 +15,8 @@
     # Performance
     atop
   ];
-in {
+in
+{
   imports = [
     ./default.nix
   ];

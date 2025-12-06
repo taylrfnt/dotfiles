@@ -1,0 +1,9 @@
+[Unit]
+Description=Starts discord ipc
+
+[Service]
+ExecStart=/usr/bin/env bash /home/taylor/.scripts/discord-ipc
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

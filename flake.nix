@@ -22,103 +22,105 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    hjem,
-    home-manager,
-    nvf,
-    nixos-wsl,
-    nix-darwin,
-    nix-homebrew,
-    ...
-  } @ inputs: {
-    pkgs.config.allowUnfree = true;
-    nixosConfigurations = {
-      # Inari - my WSL system
-      "inari" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        system = "x86_64-linux";
-        modules = [
-          # add our system configurations
-          ./system/default.nix
-          # add our packages
-          ./packages/wsl.nix
-          # source our home configs (hjem)
-          hjem.nixosModules.default
-          ./home/hjem/default.nix
-          # add our nvf configurations
-          nvf.nixosModules.default
-          ./modules/nvf/default.nix
-          # source wsl configurations
-          nixos-wsl.nixosModules.default
-          {
-            system.stateVersion = "24.11";
-            wsl = {
-              enable = true;
-              defaultUser = "taylor";
-              interop = {
-                includePath = true;
-                register = true;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      hjem,
+      home-manager,
+      nvf,
+      nixos-wsl,
+      nix-darwin,
+      nix-homebrew,
+      ...
+    }@inputs:
+    {
+      pkgs.config.allowUnfree = true;
+      nixosConfigurations = {
+        # Inari - my WSL system
+        "inari" = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
+          modules = [
+            # add our system configurations
+            ./system/wsl.nix
+            # add our packages
+            ./packages/wsl.nix
+            # source our home configs (hjem)
+            hjem.nixosModules.default
+            ./home/hjem/wsl.nix
+            # add our nvf configurations
+            nvf.nixosModules.default
+            ./modules/nvf/default.nix
+            # source wsl configurations
+            nixos-wsl.nixosModules.default
+            {
+              system.stateVersion = "24.11";
+              wsl = {
+                enable = true;
+                defaultUser = "taylor";
+                interop = {
+                  includePath = true;
+                  register = true;
+                };
               };
-            };
-          }
-        ];
+            }
+          ];
+        };
+        # Fujin - my NixOS VM
+        "fujin" = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "aarch64-linux";
+          modules = [
+            # add hardware configurations
+            ./hardware/aarch64-linux.nix
+            # add our system configurations
+            ./system/aarch64-linux.nix
+            # add our packages
+            ./packages/aarch64-linux.nix
+            # source our home configs (hjem)
+            hjem.nixosModules.default
+            {
+              hjem.users.taylor = ./home/hjem/aarch64-linux.nix;
+            }
+            # add our nvf configurations
+            nvf.nixosModules.default
+            ./modules/nvf/default.nix
+          ];
+        };
       };
-      # Fujin - my NixOS VM
-      "fujin" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        system = "aarch64-linux";
-        modules = [
-          # add hardware configurations
-          ./hardware/aarch64-linux.nix
-          # add our system configurations
-          ./system/aarch64-linux.nix
-          # add our packages
-          ./packages/aarch64-linux.nix
-          # source our home configs (hjem)
-          hjem.nixosModules.default
-          {
-            hjem.users.taylor = ./home/hjem/aarch64-linux.nix;
-          }
-          # add our nvf configurations
-          nvf.nixosModules.default
-          ./modules/nvf/default.nix
-        ];
+      # Amaterasu - my darwin system
+      darwinConfigurations = {
+        "amaterasu" = nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            #nix-homebrew options
+            nix-homebrew.darwinModules.nix-homebrew
+            ./system/darwin.nix
+            # packages
+            ./packages/darwin.nix
+            # nvf
+            nvf.nixosModules.default
+            ./modules/nvf/default.nix
+            # # hjem
+            # hjem.nixosModules.default
+            # ./home/hjem/darwin.nix
+            # home manager
+            # home-manager.darwinModules.home-manager
+            # {
+            #   # `home-manager` config
+            #   home-manager = {
+            #     minimal = true;
+            #     useGlobalPkgs = true;
+            #     useUserPackages = true;
+            #     users.taylor = import ./home/hm/darwin.nix;
+            #   };
+            # }
+            # source our home configs (hjem)
+            hjem.darwinModules.default
+            ./home/hjem/darwin.nix
+          ];
+        };
       };
     };
-    # Amaterasu - my darwin system
-    darwinConfigurations = {
-      "amaterasu" = nix-darwin.lib.darwinSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          #nix-homebrew options
-          nix-homebrew.darwinModules.nix-homebrew
-          ./system/darwin.nix
-          # packages
-          ./packages/darwin.nix
-          # nvf
-          nvf.nixosModules.default
-          ./modules/nvf/default.nix
-          # # hjem
-          # hjem.nixosModules.default
-          # ./home/hjem/darwin.nix
-          # home manager
-          # home-manager.darwinModules.home-manager
-          # {
-          #   # `home-manager` config
-          #   home-manager = {
-          #     minimal = true;
-          #     useGlobalPkgs = true;
-          #     useUserPackages = true;
-          #     users.taylor = import ./home/hm/darwin.nix;
-          #   };
-          # }
-          # source our home configs (hjem)
-          hjem.darwinModules.default
-          ./home/hjem/darwin.nix
-        ];
-      };
-    };
-  };
 }

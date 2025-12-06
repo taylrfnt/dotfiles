@@ -1,0 +1,9 @@
+echo "attempting startup..."
+
+echo "checking for running socat PID"
+pidof socat >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "no socat found - starting wsl-relay & socat"
+  sudo socat UNIX-LISTEN:/var/run/discord-relay,user=taylor,group=users,umask=007,fork \
+    EXEC:"/mnt/c/Users/taylr/go/bin/wsl-relay.exe --close-pipe --pipe-closes --pipe //./pipe/discord-relay"
+fi
