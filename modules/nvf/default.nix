@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.nvf = {
     enable = true;
     settings = {
@@ -52,8 +53,8 @@
               end
             '';
             desc = "Disable blink.cmp completion for NvimTree buffers.";
-            event = ["BufEnter"];
-            pattern = ["NvimTree"];
+            event = [ "BufEnter" ];
+            pattern = [ "NvimTree" ];
           }
         ];
 
@@ -76,7 +77,7 @@
         };
 
         # language support
-        languages = import ./languages/default.nix {inherit pkgs;};
+        languages = import ./languages/default.nix { inherit pkgs; };
 
         diagnostics = {
           enable = true;
@@ -291,14 +292,25 @@
               nix = "110";
               ruby = "120";
               java = "130";
-              go = ["90" "130"];
+              go = [
+                "90"
+                "130"
+              ];
             };
           };
           fastaction.enable = true;
         };
 
         # load some custom plugins not in the nvf flake
-        extraPlugins = import ./plugins/default.nix {inherit pkgs;};
+        extraPlugins = import ./plugins/default.nix { inherit pkgs; };
+        presence = {
+          neocord = {
+            enable = true;
+            setupOpts = {
+              logo = "https://github.com/NotAShelf/nvf/raw/main/.github/assets/nvf-logo-work.svg";
+            };
+          };
+        };
       };
     };
   };
