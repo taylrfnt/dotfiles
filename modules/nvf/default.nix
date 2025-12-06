@@ -306,9 +306,8 @@
         presence = {
           neocord = {
             enable = true;
-            setupOpts = {
-              logo = "https://github.com/NotAShelf/nvf/raw/main/.github/assets/nvf-logo-work.svg";
-            };
+            logo = "https://github.com/NotAShelf/nvf/raw/main/.github/assets/nvf-logo-work.svg";
+            main_image = "logo";
           };
         };
       };
