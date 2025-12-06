@@ -303,13 +303,6 @@
 
         # load some custom plugins not in the nvf flake
         extraPlugins = import ./plugins/default.nix { inherit pkgs; };
-        presence = {
-          neocord = {
-            enable = true;
-            logo = "https://github.com/NotAShelf/nvf/raw/main/.github/assets/nvf-logo-work.svg";
-            main_image = "logo";
-          };
-        };
       };
     };
   };
