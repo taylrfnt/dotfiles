@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   commonPkgs = with pkgs; [
     # System
     git
@@ -21,6 +22,7 @@
     smfh
     gettext
     man
+    lsof
 
     # Shells
     zsh
@@ -84,9 +86,11 @@
     # Misc
     pipes-rs
   ];
-in {
+in
+{
   # allow named unfree packages (we don't want to install something unfree by accident)
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "terraform"
       "copilot-language-server"
