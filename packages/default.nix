@@ -74,6 +74,7 @@ let
     skopeo
     cloudfoundry-cli
     terraform
+    tailscale
 
     # AI
     opencode
