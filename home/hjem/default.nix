@@ -15,6 +15,15 @@ let
       '';
     };
 
+    # ghostty
+    ".config/ghostty/config" = {
+      enable = true;
+      executable = false;
+      clobber = true;
+      target = ".config/ghostty/config";
+      source = ./files/ghostty/default-config;
+    };
+
     # oh-my-posh
     ".config/oh-my-posh/zen.toml" = {
       enable = true;
@@ -67,10 +76,13 @@ let
   };
 in
 {
-  hjem.users = {
-    taylor = {
-      enable = true;
-      files = commonFiles;
+  hjem = {
+    linker = pkgs.smfh;
+    users = {
+      taylor = {
+        enable = true;
+        files = commonFiles;
+      };
     };
   };
 }

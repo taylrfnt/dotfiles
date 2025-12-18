@@ -115,7 +115,7 @@
             # }
             # source our home configs (hjem)
             hjem.darwinModules.default
-            ./home/hjem/darwin.nix
+            ./home/hjem/default.nix
           ];
         };
       };
