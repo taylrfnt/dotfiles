@@ -23,6 +23,13 @@ let
       target = ".config/oh-my-posh/zen.toml";
       source = ./files/oh-my-posh/default.toml;
     };
+    ".config/oh-my-posh/zen-embedded.toml" = {
+      enable = true;
+      executable = false;
+      clobber = true;
+      target = ".config/oh-my-posh/zen-embedded.toml";
+      source = ./files/oh-my-posh/embedded.toml;
+    };
 
     # k9s
     ".config/k9s/config.yaml" = {
