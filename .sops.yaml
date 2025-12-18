@@ -1,0 +1,13 @@
+keys:
+  - &admin_taylor age1q0h69w37hr04rsu7lah64wy7u7jpnql8lmwcnxc97tl4u5ud89xscjkrny
+  - &server_emmet age1d06r93npqjhtg0pvygs54zxktuapccu0hvnyktwyyfm7ddwp9p4sxnznk0
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+        - *admin_taylor
+  - path_regex: secrets/emmet/secrets.yaml$
+    key_groups:
+      - age:
+        - *admin_taylor
+        - *server_emmet

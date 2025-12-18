@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +36,7 @@
       nixos-wsl,
       nix-darwin,
       nix-homebrew,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -94,25 +99,17 @@
         "amaterasu" = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            #nix-homebrew options
-            nix-homebrew.darwinModules.nix-homebrew
+            # system config
             ./system/darwin.nix
+            # secrets
+            sops-nix.darwinModules.sops
             # packages
             ./packages/darwin.nix
+            #nix-homebrew options
+            nix-homebrew.darwinModules.nix-homebrew
             # nvf
             nvf.nixosModules.default
             ./modules/nvf/default.nix
-            # home manager
-            # home-manager.darwinModules.home-manager
-            # {
-            #   # `home-manager` config
-            #   home-manager = {
-            #     minimal = true;
-            #     useGlobalPkgs = true;
-            #     useUserPackages = true;
-            #     users.taylor = import ./home/hm/darwin.nix;
-            #   };
-            # }
             # source our home configs (hjem)
             hjem.darwinModules.default
             ./home/hjem/default.nix
