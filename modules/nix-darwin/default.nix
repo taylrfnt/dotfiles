@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   #MacOS system configuration
   # homebrew installs
   homebrew = {
@@ -28,6 +29,7 @@
       "deskpad"
       "protonvpn"
       "affinity-photo"
+      "yubico-authenticator"
     ];
 
     brews = [
@@ -59,28 +61,30 @@
   # login items
   launchd.user.agents = {
     raycast = {
-      serviceConfig.ProgramArguments = ["${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast"];
+      serviceConfig.ProgramArguments = [
+        "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast"
+      ];
       # [ "${pkgs-master.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
       serviceConfig.RunAtLoad = true;
     };
 
     maccy = {
-      serviceConfig.ProgramArguments = ["${pkgs.maccy}/Applications/Maccy.app/Contents/MacOS/Maccy"];
+      serviceConfig.ProgramArguments = [ "${pkgs.maccy}/Applications/Maccy.app/Contents/MacOS/Maccy" ];
       serviceConfig.RunAtLoad = true;
     };
 
     oversight = {
-      serviceConfig.ProgramArguments = ["/Applications/OverSight.app/Contents/MacOS/OverSight"];
+      serviceConfig.ProgramArguments = [ "/Applications/OverSight.app/Contents/MacOS/OverSight" ];
       serviceConfig.RunAtLoad = true;
     };
 
     lulu = {
-      serviceConfig.ProgramArguments = ["/Applications/LuLu.app/Contents/MacOS/LuLu"];
+      serviceConfig.ProgramArguments = [ "/Applications/LuLu.app/Contents/MacOS/LuLu" ];
       serviceConfig.RunAtLoad = true;
     };
 
     yoink = {
-      serviceConfig.ProgramArguments = ["/Applications/Yoink.app/Contents/MacOS/Yoink"];
+      serviceConfig.ProgramArguments = [ "/Applications/Yoink.app/Contents/MacOS/Yoink" ];
       serviceConfig.RunAtLoad = true;
     };
   };
