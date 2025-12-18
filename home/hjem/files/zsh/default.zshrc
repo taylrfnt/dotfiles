@@ -19,7 +19,7 @@ alias k="kubectl"
 #                             VISUAL & PROMPT                              #
 ############################################################################
 # OMP
-if [[ ${TERM} != "xterm256-color" ]]; then
+if [[ ${TERM} != "xterm-256color" ]]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
   # OMP zsh-vi-mode integration
   bindkey -v
