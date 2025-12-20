@@ -30,6 +30,7 @@
       "protonvpn"
       "affinity-photo"
       "yubico-authenticator"
+      "tailscale-app"
     ];
 
     brews = [
