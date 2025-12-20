@@ -7,6 +7,7 @@ let
   commonPkgs = with pkgs; [
     # System
     git
+    jujutsu
     keychain
     bitwarden-cli
     gnupg
