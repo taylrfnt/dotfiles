@@ -4,7 +4,26 @@
   # options,
   # lib,
   ...
-}: {
+}:
+{
+  nix = {
+    linux-builder = {
+      enable = true;
+      ephemeral = true;
+      maxJobs = 4;
+      config = {
+        virtualisation = {
+          darwin-builder = {
+            diskSize = 40 * 1024;
+            memorySize = 8 * 1024;
+          };
+          cores = 6;
+        };
+      };
+    };
+    settings.trusted-users = [ "@admin" ];
+  };
+
   nixpkgs = {
     hostPlatform = "aarch64-darwin"; # The platform the configuration will be used on.
     config = {
@@ -26,13 +45,14 @@
   };
   system = {
     activationScripts = {
-      applicationIndex.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
-        };
-      in
+      applicationIndex.text =
+        let
+          env = pkgs.buildEnv {
+            name = "system-applications";
+            paths = config.environment.systemPackages;
+            pathsToLink = "/Applications";
+          };
+        in
         pkgs.lib.mkForce ''
           # using MacOs aliases instead of symlinks to allow apps to be indexed by spotlight
           echo "setting up /Applications..." >&2

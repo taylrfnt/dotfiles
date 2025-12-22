@@ -21,6 +21,9 @@ let
     # misc other darwin-specific packages
     yt-dlp
     hugo
+
+    # linux builder
+    nixos-rebuild-ng
   ];
 in
 {
