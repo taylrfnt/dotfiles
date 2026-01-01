@@ -26,6 +26,7 @@ let
     lsof
     age-plugin-yubikey
     yubikey-manager
+    sops
 
     # Shells
     zsh
