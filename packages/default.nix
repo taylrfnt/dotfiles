@@ -24,6 +24,8 @@ let
     gettext
     man
     lsof
+    age-plugin-yubikey
+    yubikey-manager
 
     # Shells
     zsh
