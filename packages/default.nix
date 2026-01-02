@@ -27,6 +27,7 @@ let
     age-plugin-yubikey
     yubikey-manager
     sops
+    openssh
 
     # Shells
     zsh
