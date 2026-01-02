@@ -31,7 +31,7 @@
   clang.enable = true;
   css.enable = true;
   html.enable = true;
-  sql.enable = true;
+  # sql.enable = true;
   java.enable = true;
   kotlin.enable = true;
   ts.enable = true;
