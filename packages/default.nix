@@ -24,6 +24,7 @@ let
     gettext
     man
     lsof
+    age
     age-plugin-yubikey
     yubikey-manager
     sops
