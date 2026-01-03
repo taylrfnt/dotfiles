@@ -12,7 +12,7 @@ let
     # darwin apps
     raycast
     maccy
-    bruno
+    # bruno
     kitty
     alacritty
     alacritty-theme
