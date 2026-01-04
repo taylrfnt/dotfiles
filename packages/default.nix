@@ -50,6 +50,7 @@ let
     # Development
     gnumake
     go
+    govulncheck
     # nodejs_24
     jdk17
     zig
