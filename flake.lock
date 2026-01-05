@@ -271,15 +271,16 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1767629251,
-        "narHash": "sha256-qiPFYDicHq4/ji0/9QxVM8hhjspsJrYcMR/S3zKlfjQ=",
-        "owner": "NotAShelf",
+        "lastModified": 1767657639,
+        "narHash": "sha256-8aJgmGlHnPLV8DcaezuTsdcrR9iw73MyjtAsIXqdH+w=",
+        "owner": "taylrfnt",
         "repo": "nvf",
-        "rev": "e0f6fe7a2ab340acde8ca0a6e4b081beafd3fb5b",
+        "rev": "54367751af78488798cebe822aa9cade924335f2",
         "type": "github"
       },
       "original": {
-        "owner": "NotAShelf",
+        "owner": "taylrfnt",
+        "ref": "nvim-treesitter-fix",
         "repo": "nvf",
         "type": "github"
       }

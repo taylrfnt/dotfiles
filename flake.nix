@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      url = "github:NotAShelf/nvf";
+      url = "github:taylrfnt/nvf/nvim-treesitter-fix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # system things (WSL, darwin)

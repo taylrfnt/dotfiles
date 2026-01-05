@@ -236,7 +236,7 @@
         minimap = {
           minimap-vim.enable = false;
           codewindow = {
-            enable = true;
+            enable = false;
             mappings = {
               toggle = "<leader>mt";
             };

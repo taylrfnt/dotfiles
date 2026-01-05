@@ -34,7 +34,7 @@
   # sql.enable = true;
   java.enable = true;
   kotlin.enable = true;
-  ts.enable = true;
+  # ts.enable = true;
   go = {
     enable = true;
     format = {
