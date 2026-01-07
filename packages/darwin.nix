@@ -17,6 +17,7 @@ let
     alacritty
     alacritty-theme
     utm
+    antigravity
 
     # misc other darwin-specific packages
     yt-dlp
@@ -42,6 +43,7 @@ in
           "github-copilot-cli"
           "crush"
           "amp-cli"
+          "antigravity"
         ];
     };
   };

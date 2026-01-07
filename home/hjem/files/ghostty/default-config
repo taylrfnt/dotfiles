@@ -25,7 +25,7 @@ window-width = 160
 focus-follows-mouse = true
 
 ## Terminfo 
-shell-integration-features = ssh-terminfo,ssh-env
+## shell-integration-features = ssh-terminfo,ssh-env
 
 ## Misc
 copy-on-select = clipboard
