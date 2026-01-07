@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      url = "github:taylrfnt/nvf/nvim-treesitter-fix";
+      url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # system things (WSL, darwin)
@@ -100,7 +100,7 @@
             # packages
             ./packages/darwin.nix
             # nvf
-            nvf.darwinModules.default
+            nvf.nixosModules.default
             ./modules/nvf/default.nix
             # home manager
             # home-manager.darwinModules.home-manager
