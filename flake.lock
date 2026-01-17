@@ -245,16 +245,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1768094570,
-        "narHash": "sha256-c1Q0QuG3GtM4ecHMFkOImTucbLk/Y8FftNB5QGjf604=",
-        "owner": "taylorfont",
+        "lastModified": 1768564909,
+        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1f2f35b274a5b3fb68091db1dc80819c63839050",
+        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
         "type": "github"
       },
       "original": {
-        "owner": "taylorfont",
-        "ref": "init-npm-groovy-lint",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
