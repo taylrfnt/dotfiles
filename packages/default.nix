@@ -11,8 +11,6 @@ let
     keychain
     bitwarden-cli
     gnupg
-    # nvf handles this now...
-    # neovim
     dig
     fastfetch
     killall
@@ -30,12 +28,24 @@ let
     sops
     openssh
 
+    # formatters for nvf
+    codespell
+    typos
+    mbake
+    alejandra
+    stylua
+    gotools
+    gofumpt
+    deno
+    google-java-format
+    shellcheck
+    shellharden
+    black
+    sqruff
+
     # Shells
     zsh
     comma
-    # replace thefuck w pay-respects
-    # thefuck
-    # pay-respects
     oh-my-posh
     zsh-vi-mode
     zsh-autosuggestions
@@ -72,6 +82,7 @@ let
     htop
 
     # Cloud
+    awscli2
     azure-cli
     kubectl
     kubelogin
@@ -87,6 +98,7 @@ let
     opencode
     # ollama
     tmux
+    zellij
     github-copilot-cli
     crush
     amp-cli

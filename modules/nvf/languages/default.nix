@@ -56,5 +56,5 @@
   #   crates.enable = true;
   # };
   # Nim LSP is broken on Darwin
-  nim.enable = false;
+  # nim.enable = true;
 }

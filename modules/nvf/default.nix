@@ -78,6 +78,8 @@
 
         # language support
         languages = import ./languages/default.nix { inherit pkgs; };
+        # formatters
+        formatter = import ./languages/formatter.nix { };
 
         diagnostics = {
           enable = true;
