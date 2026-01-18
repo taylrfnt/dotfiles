@@ -104,6 +104,7 @@ let
     amp-cli
 
     # Misc
+    russ
     pipes-rs
   ];
 in
