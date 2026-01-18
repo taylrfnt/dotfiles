@@ -17,7 +17,7 @@ let
     nh
     xsel
     openssl
-    pass
+    passage
     smfh
     gettext
     man
