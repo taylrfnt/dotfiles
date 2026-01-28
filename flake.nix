@@ -20,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nprt.url = "github:taylrfnt/nixpkgs-pr-tracker";
   };
 
   outputs =
@@ -32,6 +33,7 @@
       nixos-wsl,
       nix-darwin,
       nix-homebrew,
+      nprt,
       ...
     }@inputs:
     {

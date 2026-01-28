@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -123,6 +124,6 @@ in
     ./fonts/default.nix
   ];
   users.users.taylor = {
-    packages = commonPkgs;
+    packages = commonPkgs ++ [ inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.default ];
   };
 }
