@@ -31,6 +31,7 @@
       "affinity-photo"
       "yubico-authenticator"
       "tailscale-app"
+      "vesktop"
     ];
 
     brews = [
@@ -125,7 +126,8 @@
           "/System/Applications/TV.app"
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
-          "${pkgs.vesktop}/Applications/Vesktop.app"
+          "/System/Applications/Vesktop.app"
+          # "${pkgs.vesktop}/Applications/Vesktop.app"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"
