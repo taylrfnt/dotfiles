@@ -23,10 +23,10 @@
     };
     lsp.servers = [ "nil" ];
   };
-  markdown = {
-    enable = true;
-    extensions.render-markdown-nvim.enable = true;
-  };
+  # markdown = {
+  #   enable = true;
+  #   extensions.render-markdown-nvim.enable = true;
+  # };
   bash.enable = true;
   clang.enable = true;
   css.enable = true;

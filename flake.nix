@@ -100,7 +100,7 @@
             # packages
             ./packages/darwin.nix
             # nvf
-            nvf.nixosModules.default
+            nvf.darwinModules.default
             ./modules/nvf/default.nix
             # home manager
             # home-manager.darwinModules.home-manager
