@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nprt.url = "github:taylrfnt/nixpkgs-pr-tracker";
+    nprt.url = "github:thatsneat-dev/nprt";
   };
 
   outputs =

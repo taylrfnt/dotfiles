@@ -303,16 +303,16 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1769640729,
-        "narHash": "sha256-Giutl0k2Qa3on0QLCg/A0b0kkdjOEqq2VyfNj/5uHk8=",
-        "owner": "taylrfnt",
-        "repo": "nixpkgs-pr-tracker",
-        "rev": "4846772fe538260063ba6e055c315f8ec28b04ba",
+        "lastModified": 1769748701,
+        "narHash": "sha256-ZA6Gkmu9cHocyerlzhYO0Xi9tgo9kZ9kZdKnFSm8EXM=",
+        "owner": "thatsneat-dev",
+        "repo": "nprt",
+        "rev": "68f5c3678d95a01b745af83b452421dfb24fedc3",
         "type": "github"
       },
       "original": {
-        "owner": "taylrfnt",
-        "repo": "nixpkgs-pr-tracker",
+        "owner": "thatsneat-dev",
+        "repo": "nprt",
         "type": "github"
       }
     },
