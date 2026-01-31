@@ -42,7 +42,13 @@
       "telnet"
       "sequin"
       "asciinema"
+      # this one is from the ampcode tap
+      "ampcode/tap/ampcode"
       # "zig"
+    ];
+
+    taps = [
+      "ampcode/homebrew-tap"
     ];
 
     masApps = {

@@ -102,7 +102,7 @@ let
     zellij
     github-copilot-cli
     crush
-    amp-cli
+    # amp-cli
 
     # Misc
     russ
