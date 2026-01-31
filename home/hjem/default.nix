@@ -73,6 +73,15 @@ let
       target = ".gitconfig";
       source = ./files/git/default.gitconfig;
     };
+
+    # amp
+    ".config/amp/settings.json" = {
+      enable = true;
+      executable = false;
+      clobber = true;
+      target = ".config/amp/settings.json";
+      source = ./files/amp/default.json;
+    };
   };
 in
 {
