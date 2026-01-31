@@ -43,13 +43,13 @@
       "sequin"
       "asciinema"
       # this one is from the ampcode tap
-      "ampcode/tap/ampcode"
+      # "ampcode/tap/ampcode"
       # "zig"
     ];
 
-    taps = [
-      "ampcode/homebrew-tap"
-    ];
+    # taps = [
+    #   "ampcode/homebrew-tap"
+    # ];
 
     masApps = {
       "Yoink" = 457622435;

@@ -21,6 +21,7 @@
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nprt.url = "github:thatsneat-dev/nprt";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -34,6 +35,7 @@
       nix-darwin,
       nix-homebrew,
       nprt,
+      llm-agents,
       ...
     }@inputs:
     {

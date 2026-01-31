@@ -124,6 +124,9 @@ in
     ./fonts/default.nix
   ];
   users.users.taylor = {
-    packages = commonPkgs ++ [ inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+    packages = commonPkgs ++ [
+      inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.amp
+    ];
   };
 }
