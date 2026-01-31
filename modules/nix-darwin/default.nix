@@ -32,6 +32,7 @@
       "yubico-authenticator"
       "tailscale-app"
       "vesktop"
+      "lunar-client"
     ];
 
     brews = [
