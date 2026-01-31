@@ -33,6 +33,7 @@
       "tailscale-app"
       "vesktop"
       "lunar-client"
+      "cap"
     ];
 
     brews = [
