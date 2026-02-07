@@ -75,12 +75,12 @@ let
     };
 
     # amp
-    ".config/amp/settings.json" = {
+    ".config/amp" = {
       enable = true;
       executable = false;
       clobber = true;
-      target = ".config/amp/settings.json";
-      source = ./files/amp/default.json;
+      target = ".config/amp";
+      source = ./files/amp;
     };
   };
 in
