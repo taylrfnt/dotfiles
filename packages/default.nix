@@ -125,7 +125,7 @@ in
   ];
   users.users.taylor = {
     packages = commonPkgs ++ [
-      inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.nprt
       inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.amp
     ];
   };

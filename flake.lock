@@ -361,15 +361,16 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1770527802,
-        "narHash": "sha256-z4XSZ+FgCPJ9X25DmXI6/DobyjGoxmbFJG31pG0tfHA=",
+        "lastModified": 1771091219,
+        "narHash": "sha256-kdIac8FYxS4eeVf9eQrHgssziUoMsUPbh0iXjd83afA=",
         "owner": "thatsneat-dev",
         "repo": "nprt",
-        "rev": "b869cfdfc145937063b45056278e321c874a0add",
+        "rev": "c36ce8df4cb47fc2786ecaedccc1add43ca0e8a0",
         "type": "github"
       },
       "original": {
         "owner": "thatsneat-dev",
+        "ref": "v1.0.0",
         "repo": "nprt",
         "type": "github"
       }
