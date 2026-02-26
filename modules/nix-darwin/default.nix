@@ -31,7 +31,6 @@
       "affinity-photo"
       "yubico-authenticator"
       "tailscale-app"
-      "vesktop"
       "lunar-client"
       "cap"
     ];
@@ -135,7 +134,7 @@
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
           "/System/Applications/Vesktop.app"
-          # "${pkgs.vesktop}/Applications/Vesktop.app"
+          "${pkgs.vesktop}/Applications/Vesktop.app"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"
