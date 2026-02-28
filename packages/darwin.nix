@@ -21,7 +21,7 @@ let
     vesktop
 
     # misc other darwin-specific packages
-    yt-dlp
+    # yt-dlp
     hugo
 
     # linux builder
