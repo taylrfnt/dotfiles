@@ -18,7 +18,7 @@ let
     alacritty-theme
     utm
     # antigravity
-    vesktop
+    # vesktop
 
     # misc other darwin-specific packages
     # yt-dlp
