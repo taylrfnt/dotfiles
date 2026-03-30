@@ -41,6 +41,7 @@
             nbsp = "‿",
           }
           vim.opt.list = true
+          vim.opt.fillchars:append({ eob = " " })
         '';
 
         # autocmd
