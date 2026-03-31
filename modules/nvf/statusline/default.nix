@@ -159,6 +159,6 @@
         ''
       ];
     };
-    theme = "catppuccin";
+    # theme = "catppuccin";
   };
 }

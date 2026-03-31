@@ -14,7 +14,7 @@
         withPython3 = true;
 
         # aliases
-        viAlias = false;
+        viAlias = true;
         vimAlias = true;
 
         # keymaps
