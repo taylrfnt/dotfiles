@@ -27,6 +27,7 @@
           autoindent = true;
           signcolumn = "no";
           wrap = false;
+          foldmethod = "manual";
         };
 
         # custom lua to run at startup
