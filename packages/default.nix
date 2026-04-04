@@ -67,6 +67,7 @@ let
     zig
     rustup
     pandoc
+    doppler
 
     # File/Navigation
     eza
