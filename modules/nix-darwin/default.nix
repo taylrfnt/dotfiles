@@ -3,6 +3,9 @@
   #MacOS system configuration
   # homebrew installs
   homebrew = {
+    global = {
+      autoUpdate = false;
+    };
     enable = true;
     casks = [
       "firefox@nightly"
@@ -59,13 +62,16 @@
       "Parcel" = 639968404;
       "Xcode" = 497799835;
       "Final Cut Pro" = 424389933;
-      # "Final Cut Pro" = 1631624924;
     };
 
     onActivation = {
-      autoUpdate = true;
+      # auto-update triggers a brew re-exec that destroys HOMEBREW_PATH,
+      # breaking mas/extension package manager lookups via ORIGINAL_PATHS.
+      # Run `brew update` manually or via a separate activation step instead.
+      autoUpdate = false;
       cleanup = "zap";
-      upgrade = true;
+      # upgrade = true;
+      upgrade = false;
     };
   };
 
