@@ -37,7 +37,7 @@
     ];
 
     brews = [
-      "mas" # needs xcode-select (TODO: find automated install)
+      # "mas" # needs xcode-select (TODO: find automated install)
       "coreutils"
       "telnet"
       "sequin"
@@ -59,6 +59,7 @@
       "Parcel" = 639968404;
       "Xcode" = 497799835;
       "Final Cut Pro" = 424389933;
+      # "Final Cut Pro" = 1631624924;
     };
 
     onActivation = {
