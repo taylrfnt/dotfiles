@@ -21,7 +21,6 @@
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nprt.url = "github:thatsneat-dev/nprt";
     llm-agents.url = "github:numtide/llm-agents.nix";
