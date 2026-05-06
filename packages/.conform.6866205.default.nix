@@ -3,7 +3,8 @@
   lib,
   inputs,
   ...
-}: let
+}:
+let
   commonPkgs = with pkgs; [
     # System
     git
@@ -109,9 +110,11 @@
     russ
     pipes-rs
   ];
-in {
+in
+{
   # allow named unfree packages (we don't want to install something unfree by accident)
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "terraform"
       "copilot-language-server"
@@ -123,11 +126,9 @@ in {
     ./fonts/default.nix
   ];
   users.users.taylor = {
-    packages =
-      commonPkgs
-      ++ [
-        inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.nprt
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.amp
-      ];
+    packages = commonPkgs ++ [
+      inputs.nprt.packages.${pkgs.stdenv.hostPlatform.system}.nprt
+      inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.amp
+    ];
   };
 }
