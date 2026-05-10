@@ -277,11 +277,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1777085432,
-        "narHash": "sha256-A7LRKnpfx/fK2nWQMaK9WJzNsqly5bkDwtRE0sefuwE=",
+        "lastModified": 1778383013,
+        "narHash": "sha256-W1lpkOCa7F20nUbgTxuI9+u6TGByv5nQCc3v0LFGAQQ=",
         "owner": "thatsneat-dev",
         "repo": "muzak",
-        "rev": "78e3fa449e3893b2e04ae659b991e5b211bce272",
+        "rev": "ed269a4307bf661b9ee031b6b04e36515e7399c8",
         "type": "github"
       },
       "original": {
@@ -409,11 +409,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1776169885,
-        "narHash": "sha256-l/iNYDZ4bGOAFQY2q8y5OAfBBtrDAaPuRQqWaFHVRXM=",
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4bd9165a9165d7b5e33ae57f3eecbcb28fb231c9",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
         "type": "github"
       },
       "original": {
