@@ -23,6 +23,7 @@
       url = "github:zhaofengli-wip/nix-homebrew";
     };
     nprt.url = "github:thatsneat-dev/nprt";
+    muzak.url = "github:thatsneat-dev/muzak";
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
@@ -37,6 +38,7 @@
       nix-darwin,
       nix-homebrew,
       nprt,
+      muzak,
       llm-agents,
       ...
     }@inputs:

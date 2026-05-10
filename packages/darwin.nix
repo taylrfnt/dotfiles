@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }:
 let
@@ -54,6 +55,8 @@ in
   environment.systemPackages = darwinPkgs;
 
   users.users.taylor = {
-    packages = darwinPkgs;
+    packages = darwinPkgs ++ [
+      inputs.muzak.packages.${pkgs.stdenv.hostPlatform.system}.muzak
+    ];
   };
 }
