@@ -37,6 +37,7 @@
       "lunar-client"
       "cap"
       "vesktop"
+      "music-presence"
     ];
 
     brews = [
@@ -45,9 +46,6 @@
       "telnet"
       "sequin"
       "asciinema"
-      # this one is from the ampcode tap
-      # "ampcode/tap/ampcode"
-      # "zig"
     ];
 
     # taps = [
