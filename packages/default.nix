@@ -110,6 +110,7 @@ let
     russ
     pipes-rs
     yt-dlp
+    ffmpeg
   ];
 in
 {
