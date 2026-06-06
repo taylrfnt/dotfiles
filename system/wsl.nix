@@ -10,6 +10,8 @@
     ./default.nix
   ];
 
+  networking.hostName = "inari";
+
   # user setup
   users.users.taylor = {
     name = "taylor";
