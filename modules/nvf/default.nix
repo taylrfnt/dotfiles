@@ -28,6 +28,7 @@
           signcolumn = "no";
           wrap = false;
           foldmethod = "manual";
+          foldlevelstart = 99;
         };
 
         # custom lua to run at startup
