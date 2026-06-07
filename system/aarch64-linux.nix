@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{ lib, ... }: {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -35,21 +31,23 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services = {
+    # Enable the X11 windowing system.
+    xserver.enable = true;
+
+    # Enable spice-vdagent
+    spice-vdagentd.enable = true;
+
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
 
   imports = [
     ./desktop-environment/gnome.nix
   ];
-
-  # Enable spice-vdagent
-  services.spice-vdagentd.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -77,7 +75,10 @@
   users.users.taylor = {
     isNormalUser = true;
     description = "Taylor";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     # packages = with pkgs; [
     #   #  thunderbird
     # ];

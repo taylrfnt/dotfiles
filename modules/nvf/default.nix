@@ -148,12 +148,13 @@
 
         statusline = import ./statusline/default.nix;
 
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "mocha";
-          transparent = false;
-        };
+        # migrating to stylix
+        # theme = {
+        #   enable = true;
+        #   name = "catppuccin";
+        #   style = "mocha";
+        #   transparent = false;
+        # };
 
         autopairs.nvim-autopairs.enable = true;
         autocomplete = {

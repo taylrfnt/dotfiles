@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   # enableLSP = true;
   enableFormat = true;
   enableTreesitter = true;
