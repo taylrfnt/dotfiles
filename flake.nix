@@ -5,12 +5,12 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nvf = {
       url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # system things (WSL, darwin)
@@ -32,8 +32,8 @@
       self,
       nixpkgs,
       hjem,
-      home-manager,
       nvf,
+      stylix,
       nixos-wsl,
       nix-darwin,
       nix-homebrew,
@@ -50,6 +50,8 @@
           specialArgs = { inherit inputs; };
           system = "x86_64-linux";
           modules = [
+            # source wsl configurations
+            nixos-wsl.nixosModules.default
             # add our system configurations
             ./system/wsl.nix
             # add our packages
@@ -60,8 +62,9 @@
             # add our nvf configurations
             nvf.nixosModules.default
             ./modules/nvf/default.nix
-            # source wsl configurations
-            nixos-wsl.nixosModules.default
+            # stylix
+            stylix.nixosModules.stylix
+            ./modules/stylix/gruvbox.nix
             {
               system.stateVersion = "24.11";
               wsl = {
@@ -110,17 +113,6 @@
             # nvf
             nvf.darwinModules.default
             ./modules/nvf/default.nix
-            # home manager
-            # home-manager.darwinModules.home-manager
-            # {
-            #   # `home-manager` config
-            #   home-manager = {
-            #     minimal = true;
-            #     useGlobalPkgs = true;
-            #     useUserPackages = true;
-            #     users.taylor = import ./home/hm/darwin.nix;
-            #   };
-            # }
             # source our home configs (hjem)
             hjem.darwinModules.default
             ./home/hjem/default.nix
