@@ -58,7 +58,7 @@
             ./packages/wsl.nix
             # source our home configs (hjem)
             hjem.nixosModules.default
-            ./home/hjem/wsl.nix
+            ./modules/hjem/wsl.nix
             # add our nvf configurations
             nvf.nixosModules.default
             ./modules/nvf/default.nix
@@ -92,7 +92,7 @@
             # source our home configs (hjem)
             hjem.nixosModules.default
             {
-              hjem.users.taylor = ./home/hjem/aarch64-linux.nix;
+              hjem.users.taylor = ./modules/hjem/aarch64-linux.nix;
             }
             # add our nvf configurations
             nvf.nixosModules.default
@@ -115,7 +115,7 @@
             ./modules/nvf/default.nix
             # source our home configs (hjem)
             hjem.darwinModules.default
-            ./home/hjem/default.nix
+            ./modules/hjem/default.nix
           ];
         };
       };
