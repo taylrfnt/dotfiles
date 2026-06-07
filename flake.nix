@@ -64,7 +64,7 @@
             ./modules/nvf/default.nix
             # stylix
             stylix.nixosModules.stylix
-            ./modules/stylix/gruvbox.nix
+            ./modules/stylix/catppuccin.nix
             {
               system.stateVersion = "24.11";
               wsl = {
