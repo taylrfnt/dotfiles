@@ -40,6 +40,8 @@ My Apple Silicon Mac (`aarch64-darwin`), managed with
   configuration declaratively, shared across every host.
 - **[Stylix](https://github.com/nix-community/stylix)** — system-wide theming
   (Catppuccin Mocha by default; Gruvbox available).
+- **[llm-agents](https://github.com/numtide/llm-agents.nix)** — Numtide's flake
+  packaging LLM coding agents; used here to provide Amp across every host.
 - **Shared package set** — one common package list across all hosts plus
   per-host extras, covering shells, dev tooling, cloud CLIs, and more.
 
