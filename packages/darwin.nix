@@ -22,6 +22,7 @@ let
     utm
     # antigravity
     # vesktop
+    macchina
 
     # misc other darwin-specific packages
     # yt-dlp
