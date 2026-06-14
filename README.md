@@ -28,6 +28,8 @@ My Apple Silicon Mac (`aarch64-darwin`), managed with
 [nix-darwin](https://github.com/LnL7/nix-darwin) and
 [nix-homebrew](https://github.com/zhaofengli-wip/nix-homebrew).
 
+![Amaterasu via nix-darwin](images/nix-aarch64-darwin.png)
+
 ## What's inside
 
 - **[hjem](https://github.com/feel-co/hjem)** — manages all user-level config
@@ -46,10 +48,11 @@ My Apple Silicon Mac (`aarch64-darwin`), managed with
   per-host extras, covering shells, dev tooling, cloud CLIs, and more.
 
 > [!NOTE]
-> This configuration **does not use [home-manager](https://github.com/nix-community/home-manager)**
-> or other heavyweight modules. Dotfiles are handled by hjem standalone and the
-> editor by nvf, deliberately keeping the module surface small to streamline
-> build and switch times.
+> This configuration **does not use
+> [home-manager](https://github.com/nix-community/home-manager)** or other
+> heavyweight modules. Dotfiles are handled by hjem standalone and the editor by
+> nvf, deliberately keeping the module surface small to streamline build and
+> switch times.
 
 ## Layout
 
@@ -83,8 +86,8 @@ nh os switch . -H inari   # or -H fujin
 nh darwin switch . -H amaterasu
 ```
 
-| Host        | Platform        | Builder       | Config       |
-| ----------- | --------------- | ------------- | ------------ |
-| `inari`     | `x86_64-linux`  | NixOS (WSL)   | `.#inari`    |
-| `fujin`     | `aarch64-linux` | NixOS         | `.#fujin`    |
-| `amaterasu` | `aarch64-darwin`| nix-darwin    | `.#amaterasu`|
+| Host        | Platform         | Builder     | Config        |
+| ----------- | ---------------- | ----------- | ------------- |
+| `inari`     | `x86_64-linux`   | NixOS (WSL) | `.#inari`     |
+| `fujin`     | `aarch64-linux`  | NixOS       | `.#fujin`     |
+| `amaterasu` | `aarch64-darwin` | nix-darwin  | `.#amaterasu` |
