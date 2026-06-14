@@ -10,6 +10,7 @@ let
     mkalias
     mas
     container
+    devenv
 
     # darwin apps
     raycast

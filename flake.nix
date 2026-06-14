@@ -110,6 +110,9 @@
             ./system/darwin.nix
             # packages
             ./packages/darwin.nix
+            # stylix
+            stylix.darwinModules.stylix
+            ./modules/stylix/catppuccin.nix
             # nvf
             nvf.darwinModules.default
             ./modules/nvf/default.nix
