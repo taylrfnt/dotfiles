@@ -98,12 +98,12 @@ let
     tailscale
 
     # AI
-    opencode
+    # opencode
     # ollama
     tmux
     zellij
     github-copilot-cli
-    crush
+    # crush
     # amp-cli
 
     # Misc
