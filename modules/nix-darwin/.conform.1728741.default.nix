@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   #MacOS system configuration
   # homebrew installs
   homebrew = {
@@ -83,22 +83,22 @@
     };
 
     maccy = {
-      serviceConfig.ProgramArguments = ["${pkgs.maccy}/Applications/Maccy.app/Contents/MacOS/Maccy"];
+      serviceConfig.ProgramArguments = [ "${pkgs.maccy}/Applications/Maccy.app/Contents/MacOS/Maccy" ];
       serviceConfig.RunAtLoad = true;
     };
 
     oversight = {
-      serviceConfig.ProgramArguments = ["/Applications/OverSight.app/Contents/MacOS/OverSight"];
+      serviceConfig.ProgramArguments = [ "/Applications/OverSight.app/Contents/MacOS/OverSight" ];
       serviceConfig.RunAtLoad = true;
     };
 
     lulu = {
-      serviceConfig.ProgramArguments = ["/Applications/LuLu.app/Contents/MacOS/LuLu"];
+      serviceConfig.ProgramArguments = [ "/Applications/LuLu.app/Contents/MacOS/LuLu" ];
       serviceConfig.RunAtLoad = true;
     };
 
     yoink = {
-      serviceConfig.ProgramArguments = ["/Applications/Yoink.app/Contents/MacOS/Yoink"];
+      serviceConfig.ProgramArguments = [ "/Applications/Yoink.app/Contents/MacOS/Yoink" ];
       serviceConfig.RunAtLoad = true;
     };
   };
